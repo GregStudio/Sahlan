@@ -25,7 +25,7 @@ class WebConfigSeeder extends Seeder
         WebConfig::create([
             'name'  => 'app_name',
             'label' => 'Nama Aplikasi',
-            'value' => 'Kiat Teknik',
+            'value' => 'Larisa Shop',
             'type'  => 0
         ]);
 
