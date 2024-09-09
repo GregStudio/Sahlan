@@ -15,8 +15,8 @@ class ShippingSeeder extends Seeder
     public function run()
     {
         ShippingAddress::create([
-            'city_id' => 444,
-            'province_id' => 11
+            'city_id' => 122,
+            'province_id' => 23
         ]);
     }
 }
