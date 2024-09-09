@@ -37,7 +37,7 @@ class CategorySeeder extends Seeder
 
         Category::create([
             'id'            => 4,
-            'name'          => 'Bumbu dan Rempah',
+            'name'          => 'Bumbu & Rempah',
             'slug'          => 'bumbu-rempah',
             'thumbnails'    => 'file/category/bumbu-rempah.png'
         ]);
