@@ -16,30 +16,30 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'id'            => 1,
-            'name'          => 'Kabel',
-            'slug'          => 'kabel',
-            'thumbnails'    => 'file/category/kabel.png'
+            'name'          => 'Bahan Pangan Pokok',
+            'slug'          => 'bahan-pangan-pokok',
+            'thumbnails'    => 'file/category/bahan-pokok.png'
         ]);
 
         Category::create([
             'id'            => 2,
-            'name'          => 'Saklar',
-            'slug'          => 'saklar',
-            'thumbnails'    => 'file/category/saklar.png'
+            'name'          => 'Sumber Protein',
+            'slug'          => 'sumber-protein',
+            'thumbnails'    => 'file/category/sumber-protein.png'
         ]);
 
         Category::create([
             'id'            => 3,
-            'name'          => 'Lampu',
-            'slug'          => 'lampu',
-            'thumbnails'    => 'file/category/lampu.png'
+            'name'          => 'Bahan Masak',
+            'slug'          => 'bahan-masak',
+            'thumbnails'    => 'file/category/bahan-masak.png'
         ]);
 
         Category::create([
             'id'            => 4,
-            'name'          => 'Lainnya',
-            'slug'          => 'lainnya',
-            'thumbnails'    => 'file/category/lainnya.png'
+            'name'          => 'Bumbu dan Rempah',
+            'slug'          => 'bumbu-rempah',
+            'thumbnails'    => 'file/category/bumbu-rempah.png'
         ]);
     }
 }
