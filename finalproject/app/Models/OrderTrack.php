@@ -9,5 +9,4 @@ class OrderTrack extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
 }

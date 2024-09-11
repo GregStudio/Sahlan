@@ -20,5 +20,4 @@ class Category extends Model
     {
         return asset('storage/'. $this->thumbnails);
     }
-
 }
