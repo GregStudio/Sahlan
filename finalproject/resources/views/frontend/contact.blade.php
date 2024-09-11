@@ -23,9 +23,9 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 p-0 ">
                     <div class="categories__item">
                         <div class="categories__text">
-                            <h4>Kiat Teknik Surabaya</h4>
-                            <p>Jl. Sambongan IV No.11</p>
-                            <p>082232769157</p>
+                            <h4>Larisa Shop</h4>
+                            <p>Jl. Wolowaru - Lianunu, Kabupaten Ende</p>
+                            <p>081998454796</p>
                         </div>
                     </div>
                 </div>
