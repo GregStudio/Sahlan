@@ -26,4 +26,5 @@ class Cart extends Model
         $weight = $this->qty * $this->Product->weight;
         return $weight;
     }
+
 }
