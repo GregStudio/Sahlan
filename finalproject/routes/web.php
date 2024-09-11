@@ -151,5 +151,4 @@ Route::get('/category', [FrontendCategoryController::class,'index'])->name('cate
 Route::get('/category/{slug}', [FrontendCategoryController::class,'show'])->name('category.show');
 Route::get('/product/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');
 Route::get('/contact', [\App\Http\Controllers\Frontend\ContactController::class,'index'])->name('contact.index');
-
 require __DIR__ . '/auth.php';
