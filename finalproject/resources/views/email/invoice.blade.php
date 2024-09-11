@@ -284,7 +284,7 @@
                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 300px;">
                                 <tr>
                                     <td align="left" valign="top" style="padding-bottom: 36px; padding-left: 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                        <p><strong>Rekening Kiat Teknik BCA:</strong></p>
+                                        <p><strong>Rekening Larisa Shop BCA:</strong></p>
                                         <p>7240120318 A/N Reynaldi Julianto</p>
                                     </td>
                                 </tr>
