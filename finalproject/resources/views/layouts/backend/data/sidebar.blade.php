@@ -1,10 +1,10 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="{{ route('admin.dashboard') }}">Kiat Teknik</a>
+        <a href="{{ route('admin.dashboard') }}">Larisa Shop</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{ route('admin.dashboard') }}">KT</a>
+        <a href="{{ route('admin.dashboard') }}">LS</a>
       </div>
       <ul class="sidebar-menu">
           @php($user_id = \Illuminate\Support\Facades\DB::table('model_has_roles')->where('model_id', '=', \Illuminate\Support\Facades\Auth::id())->get())
