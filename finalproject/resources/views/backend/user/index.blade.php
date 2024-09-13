@@ -32,8 +32,6 @@
                                             purchasing
                                         @elseif($role->role_id == 4)
                                             cashier
-                                        @elseif($role->role_id == 5)
-                                            owner
                                         @endif
                                     </td>
                                 @endif
