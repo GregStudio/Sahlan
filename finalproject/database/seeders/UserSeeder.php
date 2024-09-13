@@ -19,8 +19,7 @@ class UserSeeder extends Seeder
         Role::create(['name' => 'user']);
         Role::create(['name' => 'purchasing']);
         Role::create(['name' => 'cashier']);
-        Role::create(['name' => 'owner']);
-
+        
         // Create User
         $user = User::create([
             'name' => 'Admin',
@@ -49,12 +48,5 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
         $user->assignRole('cashier');
-
-        $user = User::create([
-            'name' => 'Owner',
-            'email' => 'owner@gmail.com',
-            'password' => bcrypt('password')
-        ]);
-        $user->assignRole('owner');
     }
 }
