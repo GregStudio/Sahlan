@@ -14,7 +14,6 @@
                         <option value="2">user</option>
                         <option value="3">purchasing</option>
                         <option value="4">cashier</option>
-                        <option value="5">owner</option>
                     </x-forms.select>
 
                     <x-forms.input name="email" type="email" label="Email" :isRequired="true" />
