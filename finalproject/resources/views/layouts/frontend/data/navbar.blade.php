@@ -37,7 +37,7 @@
                                 @php($user_id = \Illuminate\Support\Facades\DB::table('model_has_roles')->where('model_id', '=', \Illuminate\Support\Facades\Auth::id())->get())
                                 @foreach($user_id as $id)
                                     @if($id->role_id == 1)
-                                        <li><a href="{{ route('deliveryOrder.index') }}">Menu Admin</a></li>
+                                        <li><a href="{{ route('admin.dashboard') }}">Menu Admin</a></li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <li>
@@ -77,17 +77,6 @@
                                                 </a>
                                             </li>
                                         </form>
-                                    @elseif($id->role_id == 5)
-                                        <li><a href="{{ route('admin.dashboard') }}">Menu Owner</a></li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <li>
-                                                <a href="{{ route('logout')  }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" > Logout
-                                                </a>
-                                            </li>
-                                        </form>
-                                    @endif
                                 @endforeach
                             </ul>
                         </li>
