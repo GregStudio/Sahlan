@@ -14,11 +14,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // Create Role
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'user']);
         Role::create(['name' => 'purchasing']);
         Role::create(['name' => 'cashier']);
         
+        // Create User
         $user = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
