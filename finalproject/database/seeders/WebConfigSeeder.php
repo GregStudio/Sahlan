@@ -14,14 +14,6 @@ class WebConfigSeeder extends Seeder
      */
     public function run()
     {
-        // TYPE[
-        //     0 = TEXT,
-        //     1 = TEXTAREA,
-        //     2 = FILE,
-        //     3 = SELECT,
-        // ]
-
-        // WEB
         WebConfig::create([
             'name'  => 'app_name',
             'label' => 'Nama Aplikasi',
