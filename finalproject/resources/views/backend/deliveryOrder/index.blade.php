@@ -33,11 +33,11 @@
                                 @endif
                             @endforeach
 
-                            @if($purchaseOrder->status == 0)
+                            @if ($purchaseOrder->status == 0)
                                 <td>Sedang Diproses</td>
                             @endif
 
-                            @if($purchaseOrder->status == 1)
+                            @if ($purchaseOrder->status == 1)
                                 <td>Selesai</td>
                             @endif
                             <td>{{ $purchaseOrder->qty }}</td>
@@ -46,7 +46,8 @@
                             <td>{{ $purchaseOrder->updated_at }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('deliveryOrder.edit',$purchaseOrder->id) }}"><i class="far fa-edit"></i>
+                                    <a class="dropdown-item has-icon" href="{{ route('deliveryOrder.edit', $purchaseOrder->id) }}"><i
+                                            class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
                                 </x-button.dropdown-button>
                             </td>
