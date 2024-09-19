@@ -33,29 +33,29 @@
         </div>
 @elseif($item['type'] == 2)
 <div class="row">
-                                                <div class="col">
-                                                    <div class="mb-3">
-                                                        <img src="{{ $item['file_path'] }}" alt="{{ $item['name'] }}" height="150px" width="150px">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="mb-3">
-                                                        <label>{{ $item['label'] }}</label>
-                                                        <input type="file" name="field[{{ $item['id'] }}]" class="form-control">
-                                                       @error($item['id'])
+                                                            <div class="col">
+                                                                <div class="mb-3">
+                                                                    <img src="{{ $item['file_path'] }}" alt="{{ $item['name'] }}" height="150px" width="150px">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="mb-3">
+                                                                    <label>{{ $item['label'] }}</label>
+                                                                    <input type="file" name="field[{{ $item['id'] }}]" class="form-control">
+                                                                   @error($item['id'])
                 <p class="text-danger">{{ $message }}</p>
             @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
             @endif
             @endforeach
 
-                                            <div class="text-right">
-                                                <button type="submit" class="btn btn-primary me-0" href="#">Simpan</button>
-                                            </div>
-                                @endslot
+                                                        <div class="text-right">
+                                                            <button type="submit" class="btn btn-primary me-0" href="#">Simpan</button>
+                                                        </div>
+                                        @endslot
     @endcomponent
 @endsection
