@@ -7,7 +7,7 @@
                 @slot('action', Route('user.store'))
                 @slot('method', 'POST')
                 @slot('content')
-                    <x-forms.input name="name" label="Nama" :isRequired="true"/>
+                    <x-forms.input name="name" label="Nama" :isRequired="true" />
 
                     <x-forms.select name="role" label="Jabatan" :isRequired="true">
                         <option value="1">admin</option>

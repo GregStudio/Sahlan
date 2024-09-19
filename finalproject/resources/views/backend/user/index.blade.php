@@ -6,7 +6,7 @@
                 @slot('header')
                     <h4>User</h4>
                     <div class="card-header-action">
-                      <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User</a>
+                        <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User</a>
                     </div>
                 @endslot
                 @slot('thead')
@@ -24,7 +24,7 @@
                             @foreach ($roles as $role)
                                 @if ($user->id == $role->model_id)
                                     <td>
-                                        @if($role->role_id == 1)
+                                        @if ($role->role_id == 1)
                                             admin
                                         @elseif($role->role_id == 2)
                                             user
