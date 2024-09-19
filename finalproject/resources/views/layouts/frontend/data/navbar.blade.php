@@ -67,18 +67,6 @@
                                                  </li>
                                              </form>
                                          @elseif($id->role_id == 3)
-                                             <li><a href="{{ route('purchaseOrder.index') }}">Menu Purchasing</a></li>
-                                             <form method="POST" action="{{ route('logout') }}">
-                                                 @csrf
-                                                 <li>
-                                                     <a href="{{ route('logout') }}"
-                                                         onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                                                         Logout
-                                                     </a>
-                                                 </li>
-                                             </form>
-                                         @elseif($id->role_id == 4)
                                              <li><a href="{{ route('feature.order.index') }}">Menu Cashier</a></li>
                                              <form method="POST" action="{{ route('logout') }}">
                                                  @csrf
