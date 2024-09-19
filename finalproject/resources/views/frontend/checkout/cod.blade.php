@@ -32,13 +32,15 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="checkout__form__input">
                                     <p>Nomor telepon <span>*</span></p>
-                                    <input type="text" name="phone_number" value="{{ auth()->user()->phone_number }}" required>
+                                    <input type="text" name="phone_number" value="{{ auth()->user()->phone_number }}"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="checkout__form__input">
                                     <p>Detail alamat <span>*</span></p>
-                                    <input type="text" name="address_detail" value="{{ auth()->user()->address }}" required>
+                                    <input type="text" name="address_detail" value="{{ auth()->user()->address }}"
+                                        required>
                                 </div>
                             </div>
                         </div>
@@ -59,8 +61,11 @@
                                     @endforeach
                                     <li>
                                         <span class="top__text">Berat total</span>
-                                        <span class="top__text__right">{{ $data['carts']->sum('total_weight_per_product') / 1000 }} Kg</span>
-                                        <input type="hidden" name="total_weight" id="total_weight" value="{{ $data['carts']->sum('total_weight_per_product') }}">
+                                        <span
+                                            class="top__text__right">{{ $data['carts']->sum('total_weight_per_product') / 1000 }}
+                                            Kg</span>
+                                        <input type="hidden" name="total_weight" id="total_weight"
+                                            value="{{ $data['carts']->sum('total_weight_per_product') }}">
                                     </li>
                                 </ul>
                             </div>
@@ -69,8 +74,10 @@
                                     <li>Subtotal <span>{{ rupiah($data['carts']->sum('total_price_per_product')) }}</span>
                                     </li>
                                     <li>Biaya pengiriman <span id="text-cost">Rp 20.000</span></li>
-                                    <li>Total <span id="total">{{ rupiah($data['carts']->sum('total_price_per_product') + 20000) }}</span></li>
-                                    <input type="hidden" name="shipping_cost" id="shipping_cost" >
+                                    <li>Total <span
+                                            id="total">{{ rupiah($data['carts']->sum('total_price_per_product') + 20000) }}</span>
+                                    </li>
+                                    <input type="hidden" name="shipping_cost" id="shipping_cost">
                                 </ul>
                             </div>
                             <button type="submit" class="site-btn">Konfirmasi</button>

@@ -32,7 +32,8 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="checkout__form__input">
                                     <p>Nomor telepon <span>*</span></p>
-                                    <input type="text" name="phone_number" value="{{ auth()->user()->phone_number }}" required>
+                                    <input type="text" name="phone_number" value="{{ auth()->user()->phone_number }}"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -41,7 +42,8 @@
                                     <select name="province_id" id="province_id" class="select-2" required>
                                         <option value="" selected disabled>-- Pilih provinsi --</option>
                                         @foreach ($data['provinces'] as $province)
-                                            <option value="{{ $province['province'] }}" data-id="{{ $province['province_id'] }}">{{ $province['province'] }}
+                                            <option value="{{ $province['province'] }}"
+                                                data-id="{{ $province['province_id'] }}">{{ $province['province'] }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -58,7 +60,8 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="checkout__form__input">
                                     <p>Detail alamat <span>*</span></p>
-                                    <input type="text" name="address_detail" value="{{ auth()->user()->address }}" required>
+                                    <input type="text" name="address_detail" value="{{ auth()->user()->address }}"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -96,8 +99,11 @@
                                     @endforeach
                                     <li>
                                         <span class="top__text">Berat total</span>
-                                        <span class="top__text__right">{{ $data['carts']->sum('total_weight_per_product') / 1000 }} Kg</span>
-                                        <input type="hidden" name="total_weight" id="total_weight" value="{{ $data['carts']->sum('total_weight_per_product') }}">
+                                        <span
+                                            class="top__text__right">{{ $data['carts']->sum('total_weight_per_product') / 1000 }}
+                                            Kg</span>
+                                        <input type="hidden" name="total_weight" id="total_weight"
+                                            value="{{ $data['carts']->sum('total_weight_per_product') }}">
                                     </li>
                                 </ul>
                             </div>
@@ -106,8 +112,10 @@
                                     <li>Subtotal <span>{{ rupiah($data['carts']->sum('total_price_per_product')) }}</span>
                                     </li>
                                     <li>Biaya pengiriman <span id="text-cost">Rp 0</span></li>
-                                    <li>Total <span id="total">{{ rupiah($data['carts']->sum('total_price_per_product')) }}</span></li>
-                                    <input type="hidden" name="shipping_cost" id="shipping_cost" >
+                                    <li>Total <span
+                                            id="total">{{ rupiah($data['carts']->sum('total_price_per_product')) }}</span>
+                                    </li>
+                                    <input type="hidden" name="shipping_cost" id="shipping_cost">
                                 </ul>
                             </div>
                             <button type="submit" class="site-btn">Konfirmasi</button>
@@ -122,7 +130,7 @@
 @push('js')
     <script>
         function checkCost() {
-            var origin = '{{ $data["shipping_address"]->city_id }}';
+            var origin = '{{ $data['shipping_address']->city_id }}';
             var destination = $('#city_id option:selected').data('id');
             var weight = "{{ $data['carts']->sum('total_weight_per_product') }}";
             var courier = $('#courier option:selected').val();
@@ -147,9 +155,11 @@
                         $('#shipping_method').append(
                             'option value="" selected disabled>-- Select Shipment Service --</option>');
                         $.each(response[0].costs, function(key, cost) {
-                            $('select[name="shipping_method"]').append('<option value="' + cost.service + ' Rp.' + cost.cost[0].value + ' Estimasi ' +
+                            $('select[name="shipping_method"]').append('<option value="' + cost
+                                .service + ' Rp.' + cost.cost[0].value + ' Estimasi ' +
                                 cost.cost[0].etd +
-                                '" data-ongkir="'+cost.cost[0].value+'">' + cost.service + ' Rp.' + cost.cost[0].value + ' Estimasi ' +
+                                '" data-ongkir="' + cost.cost[0].value + '">' + cost.service +
+                                ' Rp.' + cost.cost[0].value + ' Estimasi ' +
                                 cost.cost[0].etd +
                                 '</option>');
                             if (key == 0) {
@@ -180,7 +190,8 @@
                             'option value="" selected>-- Select City --</option>');
                         $.each(data, function(key, city) {
                             $('select[name="city_id"]').append('<option value="' + city
-                                .city_name + '" data-id="'+city.city_id+'">' + city.type + ' ' + city.city_name +
+                                .city_name + '" data-id="' + city.city_id + '">' + city
+                                .type + ' ' + city.city_name +
                                 '</option>');
                         });
                         checkCost();
@@ -198,13 +209,12 @@
             checkCost();
         });
 
-        $('#shipping_method').on('change',function(){
+        $('#shipping_method').on('change', function() {
             var ongkir = parseInt($('#shipping_method option:selected').data('ongkir'));
             countCost(ongkir);
         })
 
-        function countCost(ongkir)
-        {
+        function countCost(ongkir) {
             var subtotal = `{{ $data['carts']->sum('total_price_per_product') }}`;
             var total = parseInt(subtotal) + ongkir;
             $('#text-cost').text(rupiah(ongkir));
