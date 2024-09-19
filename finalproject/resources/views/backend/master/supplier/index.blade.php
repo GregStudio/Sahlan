@@ -27,9 +27,11 @@
                             <td>{{ $supplier->email }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('master.supplier.edit',$supplier->id) }}"><i class="far fa-edit"></i>
+                                    <a class="dropdown-item has-icon" href="{{ route('master.supplier.edit', $supplier->id) }}"><i
+                                            class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
-                                    <a class="dropdown-item has-icon btn-delete" href="{{ route('master.supplier.delete',$supplier->id) }}"><i class="fa fa-trash"></i>
+                                    <a class="dropdown-item has-icon btn-delete"
+                                        href="{{ route('master.supplier.delete', $supplier->id) }}"><i class="fa fa-trash"></i>
                                         {{ __('button.delete') }}</a>
                                 </x-button.dropdown-button>
                             </td>

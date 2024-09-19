@@ -12,7 +12,8 @@
                     <x-forms.input type="file" name="thumbnails" id="thumbnails" label="Gambar" :isRequired="true" />
 
                     <div class="text-right">
-                        <a href="{{ Route('master.category.index') }}" class="btn btn-danger" href="#">{{ __('button.cancel') }}</a>
+                        <a href="{{ Route('master.category.index') }}" class="btn btn-danger"
+                            href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>
 
