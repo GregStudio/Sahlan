@@ -18,7 +18,7 @@
                                     <div class="categories__text">
                                         <h4>{{ $category->name }}</h4>
                                         <p>{{ $category->Products()->count() }} item</p>
-                                        <a href="{{ route('category.show',$category->slug) }}">Jelajahi</a>
+                                        <a href="{{ route('category.show', $category->slug) }}">Jelajahi</a>
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +50,7 @@
             </div>
             <div class="row property__gallery">
                 @foreach ($data['new_categories'] as $new_categories2)
-                    @foreach ($new_categories2->Products()->limit(4)->get()
-        as $product)
+                    @foreach ($new_categories2->Products()->limit(4)->get() as $product)
                         <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $new_categories2->slug }}">
                             @component('components.frontend.product-card')
                                 @slot('image', asset('storage/' . $product->thumbnails))
@@ -59,7 +58,7 @@
                                     $product->slug]))
                                     @slot('name', $product->name)
                                     @slot('price', $product->price)
-                                @slot('stock', $product->stock)
+                                    @slot('stock', $product->stock)
                                 @endcomponent
                             </div>
                         @endforeach
