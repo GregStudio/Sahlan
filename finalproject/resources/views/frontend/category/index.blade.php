@@ -25,7 +25,7 @@
                             <div class="categories__text">
                                 <h4>{{ $category->name }}</h4>
                                 <p>{{ $category->Products()->count() }} item</p>
-                                <a href="{{ route('category.show',$category->slug) }}">Jelajahi</a>
+                                <a href="{{ route('category.show', $category->slug) }}">Jelajahi</a>
                             </div>
                         </div>
                     </div>
