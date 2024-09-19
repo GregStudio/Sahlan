@@ -16,7 +16,6 @@ class UserSeeder extends Seeder
     {
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'user']);
-        Role::create(['name' => 'purchasing']);
         Role::create(['name' => 'cashier']);
         
         $user = User::create([
@@ -32,13 +31,6 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
         $user->assignRole('user');
-
-        $user = User::create([
-            'name' => 'Purchasing',
-            'email' => 'purchasing@gmail.com',
-            'password' => bcrypt('password')
-        ]);
-        $user->assignRole('purchasing');
 
         $user = User::create([
             'name' => 'Cashier',
