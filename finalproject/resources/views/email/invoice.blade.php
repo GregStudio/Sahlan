@@ -177,16 +177,20 @@
                                 <tr>
                                     <td align="left" bgcolor="#D2C7BA" width="25%"
                                         style="padding: 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                        <strong>Nama Produk</strong></td>
+                                        <strong>Nama Produk</strong>
+                                    </td>
                                     <td align="left" bgcolor="#D2C7BA" width="25%"
                                         style="padding: 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                        <strong>Harga</strong></td>
+                                        <strong>Harga</strong>
+                                    </td>
                                     <td align="left" bgcolor="#D2C7BA" width="25%"
                                         style="padding: 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                        <strong>Jumlah</strong></td>
+                                        <strong>Jumlah</strong>
+                                    </td>
                                     <td align="left" bgcolor="#D2C7BA" width="25%"
                                         style="padding: 12px;font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                        <strong>Total</strong></td>
+                                        <strong>Total</strong>
+                                    </td>
                                 </tr>
 
                                 @foreach ($data['order']->orderDetail()->get() as $detail)
@@ -198,29 +202,36 @@
                                         </td>
                                         <td align="left" width="75%"
                                             style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                            <strong>{{ rupiah($detail->product->price) }}</strong></td>
+                                            <strong>{{ rupiah($detail->product->price) }}</strong>
+                                        </td>
                                         <td align="left" width="75%"
                                             style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                            <strong>{{ $detail->qty }}</strong></td>
+                                            <strong>{{ $detail->qty }}</strong>
+                                        </td>
                                         <td align="left" width="75%"
                                             style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                            <strong>{{ rupiah($detail->total_price_per_product) }}</strong></td>
+                                            <strong>{{ rupiah($detail->total_price_per_product) }}</strong>
+                                        </td>
                                     </tr>
                                 @endforeach
 
                                 <tr>
                                     <td align="left" width="75%"
                                         style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                        <strong>Total</strong></td>
+                                        <strong>Total</strong>
+                                    </td>
                                     <td align="left" width="75%"
                                         style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                        <strong></strong></td>
+                                        <strong></strong>
+                                    </td>
                                     <td align="left" width="75%"
                                         style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                        <strong></strong></td>
+                                        <strong></strong>
+                                    </td>
                                     <td align="left" width="75%"
                                         style="padding: 12px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-top: 2px dashed #D2C7BA; border-bottom: 2px dashed #D2C7BA;">
-                                        <strong>{{ rupiah($data['order']->subtotal) }}</strong></td>
+                                        <strong>{{ rupiah($data['order']->subtotal) }}</strong>
+                                    </td>
                                 </tr>
 
                             </table>
