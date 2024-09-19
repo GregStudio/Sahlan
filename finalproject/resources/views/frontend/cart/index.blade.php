@@ -20,40 +20,43 @@
                 <div class="col-lg-12">
                     <form action="{{ route('cart.update') }}" method="post">
                         @csrf
-                    <div class="shop__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Produk</th>
-                                    <th>Harga</th>
-                                    <th>Jumlah</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data['carts'] as $carts)
+                        <div class="shop__cart__table">
+                            <table>
+                                <thead>
                                     <tr>
-                                        <td class="cart__product__item">
-                                            <img src="{{ asset($carts->Product->thumbnails_path) }}" alt="" width="90">
-                                            <div class="cart__product__item__title">
-                                                <h6>{{ $carts->Product->name }}</h6>
-                                            </div>
-                                        </td>
-                                        <td class="cart__price">{{ $carts->Product->price_rupiah }}</td>
-                                        <input type="hidden" name="cart_id[]" value="{{ $carts->id }}">
-                                        <td class="cart__quantity">
-                                            <div class="pro-qty">
-                                                <input type="number" name="cart_qty[]" value="{{ $carts->qty }}" min="1" max="{{ $carts->Product->stock }}">
-                                            </div>
-                                        </td>
-                                        <td class="cart__total">{{ rupiah($carts->total_price_per_product) }}</td>
-                                        <td class="cart__close"><a href="{{ route('cart.delete',$carts->id) }}"><span class="icon_close"></span></a></td>
+                                        <th>Produk</th>
+                                        <th>Harga</th>
+                                        <th>Jumlah</th>
+                                        <th>Total</th>
+                                        <th></th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data['carts'] as $carts)
+                                        <tr>
+                                            <td class="cart__product__item">
+                                                <img src="{{ asset($carts->Product->thumbnails_path) }}" alt=""
+                                                    width="90">
+                                                <div class="cart__product__item__title">
+                                                    <h6>{{ $carts->Product->name }}</h6>
+                                                </div>
+                                            </td>
+                                            <td class="cart__price">{{ $carts->Product->price_rupiah }}</td>
+                                            <input type="hidden" name="cart_id[]" value="{{ $carts->id }}">
+                                            <td class="cart__quantity">
+                                                <div class="pro-qty">
+                                                    <input type="number" name="cart_qty[]" value="{{ $carts->qty }}"
+                                                        min="1" max="{{ $carts->Product->stock }}">
+                                                </div>
+                                            </td>
+                                            <td class="cart__total">{{ rupiah($carts->total_price_per_product) }}</td>
+                                            <td class="cart__close"><a href="{{ route('cart.delete', $carts->id) }}"><span
+                                                        class="icon_close"></span></a></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
             </div>
             <div class="row">
@@ -64,25 +67,25 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn update__btn">
-                        @if(empty($carts))
+                        @if (empty($carts))
                         @else
                             <button type="submit"><span class="icon_loading"></span> Perbarui keranjang</button>
                         @endif
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>
-            @if(empty($carts))
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+            @if (empty($carts))
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             @else
                 <div class="row">
                     <div class="col-lg-6">
@@ -95,14 +98,16 @@
                             </ul>
                             <a href="{{ route('checkout.index') }}" class="primary-btn">Pemesanan</a>
                             <br>
-                            <a href="{{ route('checkout.cod') }}" class="primary-btn" style="background: #1515CA">Bayar di tempat</a>
+                            <a href="{{ route('checkout.cod') }}" class="primary-btn" style="background: #1515CA">Bayar di
+                                tempat</a>
                             <center>
                                 <br>
-                                <form action="{{ route('checkout.offlineProcess') }}" class="checkout__form" method="POST">
-                                @csrf
+                                <form action="{{ route('checkout.offlineProcess') }}" class="checkout__form"
+                                    method="POST">
+                                    @csrf
 
                                     <button type="submit" class="primary-btn2">Ambil di toko</button>
-                            </form>
+                                </form>
                             </center>
                         </div>
                     </div>
