@@ -2,8 +2,8 @@
 
     <label for="{{ $id }}">{{ $label }}</label>
 
-    <select {{ $attributes->merge(['class' => 'form-control']) }}
-        class="form-control @error($name) is-invalid @enderror" name="{{ $name }}" id="{{ $id }}">
+    <select {{ $attributes->merge(['class' => 'form-control']) }} class="form-control @error($name) is-invalid @enderror"
+        name="{{ $name }}" id="{{ $id }}">
         {{ $slot }}
     </select>
 

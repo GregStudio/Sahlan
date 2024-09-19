@@ -1,7 +1,6 @@
 <div class="product__item">
     <a href="{{ $route }}">
-        <div class="product__item__pic set-bg"
-             data-setbg="{{ $image }}">
+        <div class="product__item__pic set-bg" data-setbg="{{ $image }}">
         </div>
     </a>
     <div class="product__item__text">
