@@ -1,16 +1,17 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>{{ $app_name }}</title>
-  <link rel="shortcut icon" href="{{ $app_logo }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ $app_logo }}" type="image/x-icon">
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+    rel="stylesheet">
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="{{ asset('ashion') }}/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ asset('ashion') }}/css/elegant-icons.css" type="text/css">
 <link rel="stylesheet" href="{{ asset('ashion') }}/css/jquery-ui.min.css" type="text/css">
 <link rel="stylesheet" href="{{ asset('ashion') }}/css/magnific-popup.css" type="text/css">

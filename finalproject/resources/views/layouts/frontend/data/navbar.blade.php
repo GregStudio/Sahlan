@@ -5,8 +5,8 @@
      <ul class="offcanvas__widget">
          <li><span class="icon_search search-switch"></span></li>
          <li><a href="#"><span class="icon_bag_alt"></span>
-             <div class="tip">2</div>
-         </a></li>
+                 <div class="tip">2</div>
+             </a></li>
      </ul>
      <div class="offcanvas__logo">
          <a href="{{ url('/') }}"><img src="{{ asset('ashion') }}/img/logo.png" alt=""></a>
@@ -27,61 +27,74 @@
              <div class="col-xl-6 col-lg-7 text-center">
                  <nav class="header__menu">
                      <ul>
-                         <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Beranda</a></li>
-                         <li class="{{ request()->is('product*') ? 'active' : '' }}"><a href="{{ route('product.index') }}">Produk</a></li>
-                         <li class="{{ request()->is('category*') ? 'active' : '' }}"><a href="{{ route('category.index') }}">Kategori</a></li>
-                         <li class="{{ request()->is('contact') ? 'active' : '' }}"><a href="{{ route('contact.index') }}">Kontak</a></li>
+                         <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Beranda</a>
+                         </li>
+                         <li class="{{ request()->is('product*') ? 'active' : '' }}"><a
+                                 href="{{ route('product.index') }}">Produk</a></li>
+                         <li class="{{ request()->is('category*') ? 'active' : '' }}"><a
+                                 href="{{ route('category.index') }}">Kategori</a></li>
+                         <li class="{{ request()->is('contact') ? 'active' : '' }}"><a
+                                 href="{{ route('contact.index') }}">Kontak</a></li>
                          @auth
-                          <li class="#"><a href="#"><i class="fa fa-angle-down"></i> {{ auth()->user()->name }}</a>
-                            <ul class="dropdown">
-                                @php($user_id = \Illuminate\Support\Facades\DB::table('model_has_roles')->where('model_id', '=', \Illuminate\Support\Facades\Auth::id())->get())
-                                @foreach($user_id as $id)
-                                    @if($id->role_id == 1)
-                                        <li><a href="{{ route('admin.dashboard') }}">Menu Admin</a></li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <li>
-                                                <a href="{{ route('logout')  }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" > Logout
-                                                </a>
-                                            </li>
-                                        </form>
-                                    @elseif($id->role_id == 2)
-                                            <li><a href="{{ route('account.edit') }}">Akun</a></li>
-                                            <li><a href="{{ route('transaction.index') }}">Riwayat Belanja</a></li>
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-                                                <li>
-                                                    <a href="{{ route('logout')  }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" > Logout
-                                                    </a>
-                                                </li>
-                                            </form>
-                                    @elseif($id->role_id == 3)
-                                        <li><a href="{{ route('purchaseOrder.index') }}">Menu Purchasing</a></li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <li>
-                                                <a href="{{ route('logout')  }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" > Logout
-                                                </a>
-                                            </li>
-                                        </form>
-                                    @elseif($id->role_id == 4)
-                                        <li><a href="{{ route('feature.order.index') }}">Menu Cashier</a></li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <li>
-                                                <a href="{{ route('logout')  }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" > Logout
-                                                </a>
-                                            </li>
-                                        </form>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </li>
-                             @else
+                             <li class="#"><a href="#"><i class="fa fa-angle-down"></i>
+                                     {{ auth()->user()->name }}</a>
+                                 <ul class="dropdown">
+                                     @php($user_id = \Illuminate\Support\Facades\DB::table('model_has_roles')->where('model_id', '=', \Illuminate\Support\Facades\Auth::id())->get())
+                                     @foreach ($user_id as $id)
+                                         @if ($id->role_id == 1)
+                                             <li><a href="{{ route('admin.dashboard') }}">Menu Admin</a></li>
+                                             <form method="POST" action="{{ route('logout') }}">
+                                                 @csrf
+                                                 <li>
+                                                     <a href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                                         Logout
+                                                     </a>
+                                                 </li>
+                                             </form>
+                                         @elseif($id->role_id == 2)
+                                             <li><a href="{{ route('account.edit') }}">Akun</a></li>
+                                             <li><a href="{{ route('transaction.index') }}">Riwayat Belanja</a></li>
+                                             <form method="POST" action="{{ route('logout') }}">
+                                                 @csrf
+                                                 <li>
+                                                     <a href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                                         Logout
+                                                     </a>
+                                                 </li>
+                                             </form>
+                                         @elseif($id->role_id == 3)
+                                             <li><a href="{{ route('purchaseOrder.index') }}">Menu Purchasing</a></li>
+                                             <form method="POST" action="{{ route('logout') }}">
+                                                 @csrf
+                                                 <li>
+                                                     <a href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                                         Logout
+                                                     </a>
+                                                 </li>
+                                             </form>
+                                         @elseif($id->role_id == 4)
+                                             <li><a href="{{ route('feature.order.index') }}">Menu Cashier</a></li>
+                                             <form method="POST" action="{{ route('logout') }}">
+                                                 @csrf
+                                                 <li>
+                                                     <a href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                                         Logout
+                                                     </a>
+                                                 </li>
+                                             </form>
+                                         @endif
+                                     @endforeach
+                                 </ul>
+                             </li>
+                         @else
                              <li><a href="{{ route('login') }}">Login</a></li>
                          @endauth
                      </ul>
@@ -90,14 +103,16 @@
              <div class="col-lg-3">
                  <div class="header__right">
                      <ul class="header__right__widget">
-                         <li><form method="get" action="{{ route('product.search') }}">
+                         <li>
+                             <form method="get" action="{{ route('product.search') }}">
                                  <input type="text" id="search-input" name="q" placeholder="Cari di sini.....">
-                             </form></li>
+                             </form>
+                         </li>
                          <li><a href="{{ route('cart.index') }}"><span class="icon_bag_alt"></span>
-                             <div class="tip">
-                                 {{ $totalCart ?? 0 }}
-                             </div>
-                         </a></li>
+                                 <div class="tip">
+                                     {{ $totalCart ?? 0 }}
+                                 </div>
+                             </a></li>
                      </ul>
                  </div>
              </div>
