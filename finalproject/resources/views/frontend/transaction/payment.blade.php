@@ -34,7 +34,8 @@
                                                 <p>7240120318 A/N Reynaldi Julianto (BCA)</p>
                                             </div>
                                             <hr>
-                                            <x-forms.input type="file" name="payment" id="payment" :label="__('field.payment')" :isRequired="true" />
+                                            <x-forms.input type="file" name="payment" id="payment" :label="__('field.payment')"
+                                                :isRequired="true" />
                                         </div>
                                     </div>
                                 </div>

@@ -101,7 +101,8 @@
                                                 <address>
                                                     <strong>Metode Pengiriman:</strong>
                                                     <div class="mt-2">
-                                                        <p class="section-lead text-uppercase">{{ $data['order']->courier }}
+                                                        <p class="section-lead text-uppercase">
+                                                            {{ $data['order']->courier }}
                                                             {{ $data['order']->shipping_method }}</p>
                                                     </div>
                                                 </address>
@@ -131,10 +132,11 @@
                                             @else
                                                 <div class="invoice-detail-item">
                                                     <div class="invoice-detail-name">Ongkos Kirim</div>
-                                                    @if($data['order']->shipping_cost == "offline")
-                                                        <div class="invoice-detail-value">{{ rupiah("0") }}</div>
+                                                    @if ($data['order']->shipping_cost == 'offline')
+                                                        <div class="invoice-detail-value">{{ rupiah('0') }}</div>
                                                     @else
-                                                        <div class="invoice-detail-value">{{ rupiah($data['order']->shipping_cost) }}</div>
+                                                        <div class="invoice-detail-value">
+                                                            {{ rupiah($data['order']->shipping_cost) }}</div>
                                                     @endif
                                                 </div>
                                                 <hr class="mt-2 mb-2">
@@ -150,38 +152,38 @@
                             </div>
                         </div>
                         @if ($data['order']->status == 1 || $data['order']->status == 2 || $data['order']->status == 3)
-                            <img src=" {{ $path.$file_path }}" alt="" width="1000">
+                            <img src=" {{ $path . $file_path }}" alt="" width="1000">
                         @endif
 
-                        @if(isset($data['order']->tracking))
-                            @foreach($data['order']->tracking->data as $key => $order)
-                                <h1>{{ucfirst($key)}}</h1>
-                                @if($key == "history")
+                        @if (isset($data['order']->tracking))
+                            @foreach ($data['order']->tracking->data as $key => $order)
+                                <h1>{{ ucfirst($key) }}</h1>
+                                @if ($key == 'history')
                                     <table class="table">
                                         <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Desc</th>
-                                        </tr>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Desc</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach(array_reverse($order) as $thisKey => $value)
-                                            <tr>
-                                                <td>{{$value->date}}</td>
-                                                <td>{{$value->desc}}</td>
-                                            </tr>
-                                        @endforeach
+                                            @foreach (array_reverse($order) as $thisKey => $value)
+                                                <tr>
+                                                    <td>{{ $value->date }}</td>
+                                                    <td>{{ $value->desc }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 @else
                                     <table class="table">
                                         <tbody>
-                                        @foreach($order as $thisKey => $value)
-                                            <tr>
-                                                <th scope="row">{{ucfirst($thisKey)}}</th>
-                                                <td>{{$value}}</td>
-                                            </tr>
-                                        @endforeach
+                                            @foreach ($order as $thisKey => $value)
+                                                <tr>
+                                                    <th scope="row">{{ ucfirst($thisKey) }}</th>
+                                                    <td>{{ $value }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 @endif
@@ -190,15 +192,19 @@
                         <hr>
                         <div class="text-md-right">
                             <div class="float-lg-left mb-lg-0 mb-3">
-                                <a href="{{ route('transaction.email', $data['order']->invoice_number) }}" class="btn btn-info btn-icon icon-left" id="pay-button"><i class="fa fa-envelope"></i>
+                                <a href="{{ route('transaction.email', $data['order']->invoice_number) }}"
+                                    class="btn btn-info btn-icon icon-left" id="pay-button"><i class="fa fa-envelope"></i>
                                     Kirim Invoice Ke Email</a>
                                 @if ($data['order']->status == 0)
-                                    <a href="{{ route('transaction.payment', $data['order']->invoice_number) }}" class="btn btn-primary btn-icon icon-left" id="pay-button"><i
+                                    <a href="{{ route('transaction.payment', $data['order']->invoice_number) }}"
+                                        class="btn btn-primary btn-icon icon-left" id="pay-button"><i
                                             class="fa fa-credit-card"></i>
                                         Proses Pembayaran</a>
-                                    <a href="{{ route('transaction.canceled', $data['order']->invoice_number) }}" class="btn btn-danger btn-icon icon-left"><i class="fa fa-times"></i>
+                                    <a href="{{ route('transaction.canceled', $data['order']->invoice_number) }}"
+                                        class="btn btn-danger btn-icon icon-left"><i class="fa fa-times"></i>
                                         Batalkan Pesanan</a>
-                                    <a href="{{ route('transaction.offline', $data['order']->invoice_number) }}" class="btn btn-warning btn-icon icon-left"><i class="fa fa-credit-card"></i>
+                                    <a href="{{ route('transaction.offline', $data['order']->invoice_number) }}"
+                                        class="btn btn-warning btn-icon icon-left"><i class="fa fa-credit-card"></i>
                                         Bayar Offline</a>
                                 @elseif ($data['order']->status == 2)
                                     <a href="{{ route('transaction.received', $data['order']->invoice_number) }}"
