@@ -10,20 +10,20 @@
                                 <div class="text-md-right">
                                     <div class="mb-lg-0 mb-3">
                                         <a href="{{ route('feature.order.index') }}"
-                                           class="btn btn-success btn-icon icon-left"><i class="fa fa-arrow-left"></i>
+                                            class="btn btn-success btn-icon icon-left"><i class="fa fa-arrow-left"></i>
                                             Kembali</a>
                                         @if ($data['order']->status == 1)
                                             <!-- <a href="{{ route('feature.order.accept', $data['order']->id) }}" class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
-                                            Terima</a> -->
+                                                Terima</a> -->
                                             <button class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
                                                 Terima</button>
                                             <a href="{{ route('feature.order.refuse', $data['order']->id) }}"
-                                               class="btn btn-danger btn-icon icon-left"><i class="fa fa-times"></i>
+                                                class="btn btn-danger btn-icon icon-left"><i class="fa fa-times"></i>
                                                 Tolak</a>
                                         @endif
                                         @if ($data['order']->status == 6)
                                             <a href="{{ route('feature.order.payOffline', $data['order']->id) }}"
-                                               class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
+                                                class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
                                                 Proses</a>
                                         @endif
                                     </div>
@@ -72,8 +72,9 @@
                         @if ($data['order']->status == 1)
                             <div class="form-group">
                                 <label for="">Masukkan Resi</label>
-                                <input type="text" class="form-control" name="resi" id="" aria-describedby="helpId"
-                                       placeholder="Nomor Resi" value="{{$data['order']->receipt_number}}">
+                                <input type="text" class="form-control" name="resi" id=""
+                                    aria-describedby="helpId" placeholder="Nomor Resi"
+                                    value="{{ $data['order']->receipt_number }}">
                                 <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                             </div>
                         @endif
@@ -83,25 +84,25 @@
                                 <div class="table-responsive">
                                     <table class="table table-striped table-hover table-md">
                                         <tbody>
-                                        <tr>
-                                            <th data-width="40" style="width: 40px;">#</th>
-                                            <th>Nama Produk</th>
-                                            <th class="text-center">Harga</th>
-                                            <th class="text-center">Jumlah</th>
-                                            <th class="text-right">Total</th>
-                                        </tr>
-                                        @foreach ($data['order']->orderDetail()->get() as $detail)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td><a
-                                                        href="{{ route('product.show', ['categoriSlug' => $detail->Product->category->slug, 'productSlug' => $detail->Product->slug]) }}">{{ $detail->product->name }}</a>
-                                                </td>
-                                                <td class="text-center">{{ rupiah($detail->price) }}</td>
-                                                <td class="text-center">{{ $detail->qty }}</td>
-                                                <td class="text-right">{{ rupiah($detail->total_price_per_product) }}
-                                                </td>
+                                                <th data-width="40" style="width: 40px;">#</th>
+                                                <th>Nama Produk</th>
+                                                <th class="text-center">Harga</th>
+                                                <th class="text-center">Jumlah</th>
+                                                <th class="text-right">Total</th>
                                             </tr>
-                                        @endforeach
+                                            @foreach ($data['order']->orderDetail()->get() as $detail)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td><a
+                                                            href="{{ route('product.show', ['categoriSlug' => $detail->Product->category->slug, 'productSlug' => $detail->Product->slug]) }}">{{ $detail->product->name }}</a>
+                                                    </td>
+                                                    <td class="text-center">{{ rupiah($detail->price) }}</td>
+                                                    <td class="text-center">{{ $detail->qty }}</td>
+                                                    <td class="text-right">{{ rupiah($detail->total_price_per_product) }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -141,10 +142,11 @@
                                         @else
                                             <div class="invoice-detail-item">
                                                 <div class="invoice-detail-name">{{ __('text.shipping_cost') }}</div>
-                                                @if($data['order']->shipping_cost == "offline")
-                                                    <div class="invoice-detail-value">{{ rupiah("0") }}</div>
+                                                @if ($data['order']->shipping_cost == 'offline')
+                                                    <div class="invoice-detail-value">{{ rupiah('0') }}</div>
                                                 @else
-                                                    <div class="invoice-detail-value">{{ rupiah($data['order']->shipping_cost) }}</div>
+                                                    <div class="invoice-detail-value">
+                                                        {{ rupiah($data['order']->shipping_cost) }}</div>
                                                 @endif
                                             </div>
                                             <hr class="mt-2 mb-2">
@@ -156,40 +158,40 @@
                                         @endif
                                     </div>
                                     @if ($data['order']->status == 1 || $data['order']->status == 2 || $data['order']->status == 3)
-                                        <img src=" {{ $path.$file_path }}" alt="" width="1000">
+                                        <img src=" {{ $path . $file_path }}" alt="" width="1000">
                                     @endif
                                 </div>
                             </div>
                         </div>
-                        @if(isset($data['order']->tracking))
-                            @foreach($data['order']->tracking->data as $key => $order)
-                                <h1>{{ucfirst($key)}}</h1>
-                                @if($key == "history")
+                        @if (isset($data['order']->tracking))
+                            @foreach ($data['order']->tracking->data as $key => $order)
+                                <h1>{{ ucfirst($key) }}</h1>
+                                @if ($key == 'history')
                                     <table class="table">
                                         <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Desc</th>
-                                        </tr>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Desc</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach(array_reverse($order) as $thisKey => $value)
-                                            <tr>
-                                                <td>{{$value->date}}</td>
-                                                <td>{{$value->desc}}</td>
-                                            </tr>
-                                        @endforeach
+                                            @foreach (array_reverse($order) as $thisKey => $value)
+                                                <tr>
+                                                    <td>{{ $value->date }}</td>
+                                                    <td>{{ $value->desc }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 @else
                                     <table class="table">
                                         <tbody>
-                                        @foreach($order as $thisKey => $value)
-                                            <tr>
-                                                <th scope="row">{{ucfirst($thisKey)}}</th>
-                                                <td>{{$value}}</td>
-                                            </tr>
-                                        @endforeach
+                                            @foreach ($order as $thisKey => $value)
+                                                <tr>
+                                                    <th scope="row">{{ ucfirst($thisKey) }}</th>
+                                                    <td>{{ $value }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 @endif

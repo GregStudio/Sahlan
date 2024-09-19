@@ -5,7 +5,6 @@
             @component('components.backend.card.card-table')
                 @slot('header')
                     <h4 class="card-title">{{ __('menu.order') }}</h4>
-
                 @endslot
                 @slot('thead')
                     <tr>
@@ -27,7 +26,8 @@
                             <td>{{ $order->created_at }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('feature.order.show',$order->id) }}"><i class="fa fa-eye"></i>
+                                    <a class="dropdown-item has-icon" href="{{ route('feature.order.show', $order->id) }}"><i
+                                            class="fa fa-eye"></i>
                                         {{ __('button.detail') }}</a>
                                 </x-button.dropdown-button>
                             </td>
