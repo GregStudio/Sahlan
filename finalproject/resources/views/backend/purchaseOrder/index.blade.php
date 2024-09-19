@@ -30,31 +30,34 @@
                                 @endif
                             @endforeach
 
-                                @foreach ($suppliers as $supplier)
-                                    @if ($purchaseOrder->supplier_id == $supplier->id)
-                                        <td>{{ $supplier->name }}</td>
-                                    @endif
-                                @endforeach
-
-                                @if($purchaseOrder->status == 0)
-                                    <td>Sedang Diproses</td>
+                            @foreach ($suppliers as $supplier)
+                                @if ($purchaseOrder->supplier_id == $supplier->id)
+                                    <td>{{ $supplier->name }}</td>
                                 @endif
+                            @endforeach
 
-                                @if($purchaseOrder->status == 1)
-                                    <td>Selesai</td>
-                                @endif
+                            @if ($purchaseOrder->status == 0)
+                                <td>Sedang Diproses</td>
+                            @endif
+
+                            @if ($purchaseOrder->status == 1)
+                                <td>Selesai</td>
+                            @endif
                             <td>{{ $purchaseOrder->qty }}</td>
                             <td>{{ $purchaseOrder->created_at }}</td>
                             <td>{{ $purchaseOrder->updated_at }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    @if($purchaseOrder->status == 0)
-                                        <a class="dropdown-item has-icon" href="{{ route('purchaseOrder.done',$purchaseOrder->id) }}"><i class="fas fa-check"></i>
+                                    @if ($purchaseOrder->status == 0)
+                                        <a class="dropdown-item has-icon"
+                                            href="{{ route('purchaseOrder.done', $purchaseOrder->id) }}"><i class="fas fa-check"></i>
                                             Tandai selesai</a>
                                     @endif
-                                    <a class="dropdown-item has-icon" href="{{ route('purchaseOrder.edit',$purchaseOrder->id) }}"><i class="far fa-edit"></i>
+                                    <a class="dropdown-item has-icon" href="{{ route('purchaseOrder.edit', $purchaseOrder->id) }}"><i
+                                            class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
-                                    <a class="dropdown-item has-icon btn-delete" href="{{ route('purchaseOrder.delete',$purchaseOrder->id) }}"><i class="fa fa-trash"></i>
+                                    <a class="dropdown-item has-icon btn-delete"
+                                        href="{{ route('purchaseOrder.delete', $purchaseOrder->id) }}"><i class="fa fa-trash"></i>
                                         {{ __('button.delete') }}</a>
                                 </x-button.dropdown-button>
                             </td>

@@ -10,28 +10,32 @@
 
                     <div class="form-group">
                         <label>Pilih Produk :</label>
-                        <select class="custom-select" name="product_id" onmouseover="this.style.boxShadow='0px 0px 15px LightSkyBlue'" onmouseout="this.style.boxShadow='0px 0px 0px LightSkyBlue'">
+                        <select class="custom-select" name="product_id" onmouseover="this.style.boxShadow='0px 0px 15px LightSkyBlue'"
+                            onmouseout="this.style.boxShadow='0px 0px 0px LightSkyBlue'">
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}">{{$product->name}}</option>
+                                <option value="{{ $product->id }}">{{ $product->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Pilih Supplier :</label>
-                        <select class="custom-select" name="supplier_id" onmouseover="this.style.boxShadow='0px 0px 15px LightSkyBlue'" onmouseout="this.style.boxShadow='0px 0px 0px LightSkyBlue'">
+                        <select class="custom-select" name="supplier_id"
+                            onmouseover="this.style.boxShadow='0px 0px 15px LightSkyBlue'"
+                            onmouseout="this.style.boxShadow='0px 0px 0px LightSkyBlue'">
                             @foreach ($suppliers as $supplier)
-                                <option value="{{ $supplier->id }}">{{$supplier->name}}</option>
+                                <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
-                    <x-forms.input name="status" id="status" value=0 hidden/>
+                    <x-forms.input name="status" id="status" value=0 hidden />
 
                     <x-forms.input type="number" name="qty" id="qty" label="Jumlah" :isRequired="true" />
 
                     <div class="text-right">
-                        <a href="{{ Route('purchaseOrder.index') }}" class="btn btn-danger" href="#">{{ __('button.cancel') }}</a>
+                        <a href="{{ Route('purchaseOrder.index') }}" class="btn btn-danger"
+                            href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>
 
