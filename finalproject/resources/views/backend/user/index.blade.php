@@ -29,8 +29,6 @@
                                         @elseif($role->role_id == 2)
                                             user
                                         @elseif($role->role_id == 3)
-                                            purchasing
-                                        @elseif($role->role_id == 4)
                                             cashier
                                         @endif
                                     </td>
