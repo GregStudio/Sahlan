@@ -60,21 +60,6 @@
                 @endif
 
                 @if ($id->role_id == 3)
-                    <li class="menu-header">Menu Purchasing</li>
-                    <li><a class="nav-link" href="{{ route('purchaseOrder.index') }}"><i class="fas fa-warehouse"></i>
-                            <span>Pesanan Pembelian</span></a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i
-                                class="fas fa-table"></i><span>Master</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{ route('master.category.index') }}">Kategori</a></li>
-                            <li><a class="nav-link" href="{{ route('master.product.index') }}">Produk</a></li>
-                            <li><a class="nav-link" href="{{ route('master.supplier.index') }}">Supplier</a></li>
-                        </ul>
-                    </li>
-                @endif
-
-                @if ($id->role_id == 4)
                     <li class="menu-header">Menu Cashier</li>
                     <li><a class="nav-link" href="{{ route('feature.order.index', 6) }}"><i
                                 class="fas fa-shopping-cart"></i> <span>Menunggu Pembayaran</span></a></li>
