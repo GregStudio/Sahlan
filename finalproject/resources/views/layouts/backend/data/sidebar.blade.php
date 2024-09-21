@@ -19,11 +19,11 @@
                             <span>Pesanan Pembelian</span></a></li>
                     <li><a class="nav-link" href="{{ route('deliveryOrder.index') }}"><i class="fas fa-boxes"></i>
                             <span>Pengiriman Pesanan</span></a></li>
-                    <li><a class="nav-link" href="{{ route('master.category.index') }}"><i class="fas fa-boxes"></i>
+                    <li><a class="nav-link" href="{{ route('master.category.index') }}"><i class="fas fa-list"></i>
                             <span>Kategori</span></a></li>
-                    <li><a class="nav-link" href="{{ route('master.product.index') }}"><i class="fas fa-boxes"></i>
+                    <li><a class="nav-link" href="{{ route('master.product.index') }}"><i class="fas fa-layer-group"></i>
                             <span>Produk</span></a></li>
-                    <li><a class="nav-link" href="{{ route('master.supplier.index') }}"><i class="fas fa-boxes"></i>
+                    <li><a class="nav-link" href="{{ route('master.supplier.index') }}"><i class="fas fa-truck"></i>
                             <span>Supplier</span></a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i
