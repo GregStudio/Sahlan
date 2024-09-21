@@ -19,7 +19,6 @@ class CreateOrderTracksTable extends Migration
             $table->string('description');
             $table->string('icon');
             $table->timestamps();
-
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
