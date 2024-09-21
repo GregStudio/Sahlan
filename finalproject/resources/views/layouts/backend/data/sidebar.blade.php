@@ -15,8 +15,6 @@
                             <span> Dasbor</span></a></li>
                     <li><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i>
                             <span>User</span></a></li>
-                    <li><a class="nav-link" href="{{ route('purchaseOrder.index') }}"><i class="fas fa-warehouse"></i>
-                            <span>Pesanan Pembelian</span></a></li>
                     <li><a class="nav-link" href="{{ route('master.category.index') }}"><i class="fas fa-list"></i>
                             <span>Kategori</span></a></li>
                     <li><a class="nav-link" href="{{ route('master.product.index') }}"><i class="fas fa-layer-group"></i>
