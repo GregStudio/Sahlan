@@ -34,16 +34,6 @@ Route::prefix('app')->group(function () {
             Route::get('/create',[\App\Http\Controllers\UserController::class,'create'])->name('create');
             Route::post('/create',[\App\Http\Controllers\UserController::class,'store'])->name('store');
         });
-
-        Route::prefix('purchaseOrder')->name('purchaseOrder.')->group(function(){
-            Route::get('/',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'index'])->name('index');
-            Route::get('/create',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'create'])->name('create');
-            Route::post('/create',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'store'])->name('store');
-            Route::get('/edit/{id}',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'edit'])->name('edit');
-            Route::post('/update/{id}',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'update'])->name('update');
-            Route::get('/delete/{id}',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'delete'])->name('delete');
-            Route::get('/{id}/done',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'done'])->name('done');
-        });
         
         Route::prefix('master')->name('master.')->group(function(){
             Route::prefix('category')->name('category.')->group(function(){
