@@ -59,9 +59,4 @@ class Product extends Model
             $q->whereIn('status',[2,3]);
         })->sum('qty');
     }
-
-    public function PurchaseOrders()
-    {
-        return $this->hasMany(PurchaseOrder::class);
-    }
 }
