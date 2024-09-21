@@ -44,13 +44,7 @@ Route::prefix('app')->group(function () {
             Route::get('/delete/{id}',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'delete'])->name('delete');
             Route::get('/{id}/done',[\App\Http\Controllers\Backend\PurchaseOrderController::class,'done'])->name('done');
         });
-
-        Route::prefix('deliveryOrder')->name('deliveryOrder.')->group(function(){
-            Route::get('/',[\App\Http\Controllers\Backend\DeliveryOrderController::class,'index'])->name('index');
-            Route::get('/edit/{id}',[\App\Http\Controllers\Backend\DeliveryOrderController::class,'edit'])->name('edit');
-            Route::post('/update/{id}',[\App\Http\Controllers\Backend\DeliveryOrderController::class,'update'])->name('update');
-        });
-
+        
         Route::prefix('master')->name('master.')->group(function(){
             Route::prefix('category')->name('category.')->group(function(){
                 Route::get('/',[CategoryController::class,'index'])->name('index');
