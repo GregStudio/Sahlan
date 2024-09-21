@@ -57,16 +57,6 @@ Route::prefix('app')->group(function () {
                 Route::get('/deleted',[ProductController::class,'deleted'])->name('deleted');
                 Route::get('/restore/{id}',[ProductController::class,'restore'])->name('restore');
             });
-
-            Route::prefix('supplier')->name('supplier.')->group(function(){
-                Route::get('/',[\App\Http\Controllers\Backend\SupplierController::class,'index'])->name('index');
-                Route::get('/create',[\App\Http\Controllers\Backend\SupplierController::class,'create'])->name('create');
-                Route::post('/create',[\App\Http\Controllers\Backend\SupplierController::class,'store'])->name('store');
-                Route::get('/show/{id}',[\App\Http\Controllers\Backend\SupplierController::class,'show'])->name('show');
-                Route::get('/edit/{id}',[\App\Http\Controllers\Backend\SupplierController::class,'edit'])->name('edit');
-                Route::post('/update/{id}',[\App\Http\Controllers\Backend\SupplierController::class,'update'])->name('update');
-                Route::get('/delete/{id}',[\App\Http\Controllers\Backend\SupplierController::class,'delete'])->name('delete');
-            });
         });
 
         Route::prefix('feature')->name('feature.')->group(function(){
