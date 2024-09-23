@@ -20,13 +20,13 @@ class ProductController extends Controller
     public function index()
     {
         $data['product'] = $this->product->get();
-        return view('backend.master.product.index',compact('data'));
+        return view('backend.product.index',compact('data'));
     }
 
     public function create()
     {
         $data['category'] = $this->category->get();
-        return view('backend.master.product.create',compact('data'));
+        return view('backend.product.create',compact('data'));
     }
 
     public function store(Request $request)
@@ -40,20 +40,20 @@ class ProductController extends Controller
             }
         }
         $this->product->store($data,true,$thisThumbnails,'product/thumbnails');
-        return redirect()->route('master.product.index')->with('success',__('message.store'));
+        return redirect()->route('product.index')->with('success',__('message.store'));
     }
 
     public function show($id)
     {
         $data['product'] = $this->product->find($id);
-        return view('backend.master.product.show',compact('data'));
+        return view('backend.product.show',compact('data'));
     }
 
     public function edit($id)
     {
         $data['product'] = $this->product->find($id);
         $data['category'] = $this->category->get();
-        return view('backend.master.product.edit',compact('data'));
+        return view('backend.product.edit',compact('data'));
     }
 
     public function update(Request $request,$id)
@@ -63,7 +63,7 @@ class ProductController extends Controller
         }else{
             $this->product->update($id,$request->except('_token'));
         }
-        return redirect()->route('master.product.index')->with('success',__('message.store'));
+        return redirect()->route('product.index')->with('success',__('message.store'));
     }
 
     public function delete($id)
@@ -76,13 +76,13 @@ class ProductController extends Controller
     public function deleted()
     {
         $data['product'] = Product::onlyTrashed()->get();
-        return view('backend.master.product.deleted',compact('data'));
+        return view('backend.product.deleted',compact('data'));
     }
 
     public function restore($id)
     {
         $product = Product::onlyTrashed()->where('id', $id);
         $product->restore();
-        return redirect()->route('master.product.deleted')->with('success',__('message.store'));
+        return redirect()->route('product.deleted')->with('success',__('message.store'));
     }
 }
