@@ -6,9 +6,9 @@
                 <div class="card-header">
                     <h4 class="card-title">{{ $data['product']->name }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('master.product.edit', $data['product']->id) }}"
+                        <a href="{{ route('product.edit', $data['product']->id) }}"
                             class="btn btn-success">{{ __('button.edit') }}</a>
-                        <a href="{{ route('master.product.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
+                        <a href="{{ route('product.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
                     </div>
                 </div>
                 <div class="card-body">
