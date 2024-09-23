@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             @component('components.backend.card.card-form')
-                @slot('action', Route('master.category.store'))
+                @slot('action', Route('category.store'))
                 @slot('content')
 
                     <x-forms.input name="name" id="name" :label="__('field.category_name')" :isRequired="true" />
@@ -12,7 +12,7 @@
                     <x-forms.input type="file" name="thumbnails" id="thumbnails" label="Gambar" :isRequired="true" />
 
                     <div class="text-right">
-                        <a href="{{ Route('master.category.index') }}" class="btn btn-danger"
+                        <a href="{{ Route('category.index') }}" class="btn btn-danger"
                             href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>
