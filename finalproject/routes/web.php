@@ -35,7 +35,7 @@ Route::prefix('app')->group(function () {
             Route::post('/create',[\App\Http\Controllers\UserController::class,'store'])->name('store');
         });
         
-        Route::prefix('category')->name('category.')->group(function(){
+        Route::prefix('category')->name('admin.category.')->group(function(){
             Route::get('/',[CategoryController::class,'index'])->name('index');
             Route::get('/create',[CategoryController::class,'create'])->name('create');
             Route::post('/create',[CategoryController::class,'store'])->name('store');
