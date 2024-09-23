@@ -19,7 +19,7 @@
                 @endphp
                 <div class="dropdown-list-content dropdown-list-icons">
                     @foreach ($products as $product)
-                        <a href="{{ route('master.product.show', ['id' => $product->id]) }}"
+                        <a href="{{ route('product.show', ['id' => $product->id]) }}"
                             class="dropdown-item dropdown-item-unread">
                             <img class="dropdown-item-icon bg-primary text-white"
                                 src="{{ asset('storage/' . $product->thumbnails) }}">
@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
                 <div class="dropdown-footer text-center">
-                    <a href="{{ route('master.product.index') }}">Ke halaman produk <i
+                    <a href="{{ route('product.index') }}">Ke halaman produk <i
                             class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
