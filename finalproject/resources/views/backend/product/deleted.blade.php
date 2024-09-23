@@ -6,9 +6,9 @@
                 @slot('header')
                     <h4 class="card-title">{{ __('menu.product') }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('master.product.index') }}" class="btn btn-warning">Lihat Produk Aktif
+                        <a href="{{ route('product.index') }}" class="btn btn-warning">Lihat Produk Aktif
                         </a>
-                        <a href="{{ route('master.product.create') }}" class="btn btn-primary">{{ __('button.add') }}
+                        <a href="{{ route('product.create') }}" class="btn btn-primary">{{ __('button.add') }}
                             {{ __('menu.product') }}</a>
                     </div>
                 @endslot
@@ -34,7 +34,7 @@
                             <td>{{ tanggal($product->created_at) }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('master.product.restore', $product->id) }}"><i
+                                    <a class="dropdown-item has-icon" href="{{ route('product.restore', $product->id) }}"><i
                                             class="fa fa-history"></i>
                                         Aktifkan</a>
                                 </x-button.dropdown-button>
