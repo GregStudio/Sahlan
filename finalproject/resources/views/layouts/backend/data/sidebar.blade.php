@@ -15,9 +15,9 @@
                             <span> Dasbor</span></a></li>
                     <li><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i>
                             <span>User</span></a></li>
-                    <li><a class="nav-link" href="{{ route('master.category.index') }}"><i class="fas fa-list"></i>
+                    <li><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-list"></i>
                             <span>Kategori</span></a></li>
-                    <li><a class="nav-link" href="{{ route('master.product.index') }}"><i class="fas fa-layer-group"></i>
+                    <li><a class="nav-link" href="{{ route('product.index') }}"><i class="fas fa-layer-group"></i>
                             <span>Produk</span></a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i
