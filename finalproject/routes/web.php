@@ -35,28 +35,26 @@ Route::prefix('app')->group(function () {
             Route::post('/create',[\App\Http\Controllers\UserController::class,'store'])->name('store');
         });
         
-        Route::prefix('master')->name('master.')->group(function(){
-            Route::prefix('category')->name('category.')->group(function(){
-                Route::get('/',[CategoryController::class,'index'])->name('index');
-                Route::get('/create',[CategoryController::class,'create'])->name('create');
-                Route::post('/create',[CategoryController::class,'store'])->name('store');
-                Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('delete');
-                Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
-                Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
-                Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
-            });
+        Route::prefix('category')->name('category.')->group(function(){
+            Route::get('/',[CategoryController::class,'index'])->name('index');
+            Route::get('/create',[CategoryController::class,'create'])->name('create');
+            Route::post('/create',[CategoryController::class,'store'])->name('store');
+            Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('delete');
+            Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
+            Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
+            Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
+        });
 
-            Route::prefix('product')->name('product.')->group(function(){
-                Route::get('/',[ProductController::class,'index'])->name('index');
-                Route::get('/create',[ProductController::class,'create'])->name('create');
-                Route::post('/create',[ProductController::class,'store'])->name('store');
-                Route::get('/show/{id}',[ProductController::class,'show'])->name('show');
-                Route::get('/edit/{id}',[ProductController::class,'edit'])->name('edit');
-                Route::post('/update/{id}',[ProductController::class,'update'])->name('update');
-                Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete');
-                Route::get('/deleted',[ProductController::class,'deleted'])->name('deleted');
-                Route::get('/restore/{id}',[ProductController::class,'restore'])->name('restore');
-            });
+        Route::prefix('product')->name('product.')->group(function(){
+            Route::get('/',[ProductController::class,'index'])->name('index');
+            Route::get('/create',[ProductController::class,'create'])->name('create');
+            Route::post('/create',[ProductController::class,'store'])->name('store');
+            Route::get('/show/{id}',[ProductController::class,'show'])->name('show');
+            Route::get('/edit/{id}',[ProductController::class,'edit'])->name('edit');
+            Route::post('/update/{id}',[ProductController::class,'update'])->name('update');
+            Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete');
+            Route::get('/deleted',[ProductController::class,'deleted'])->name('deleted');
+            Route::get('/restore/{id}',[ProductController::class,'restore'])->name('restore');
         });
 
         Route::prefix('feature')->name('feature.')->group(function(){
