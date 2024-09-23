@@ -4,7 +4,7 @@
         <div class="col-12">
             @component('components.backend.card.card-form')
                 @slot('isfile', true)
-                @slot('action', Route('master.product.update', $data['product']->id))
+                @slot('action', Route('product.update', $data['product']->id))
                 @slot('method', 'POST')
                 @slot('content')
 
@@ -47,7 +47,7 @@
                         hintText="Kosongkan jika tidak akan mengubah file" />
 
                     <div class="text-right">
-                        <a href="{{ Route('master.product.index') }}" class="btn btn-danger"
+                        <a href="{{ Route('product.index') }}" class="btn btn-danger"
                             href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>
