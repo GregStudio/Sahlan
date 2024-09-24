@@ -6,7 +6,7 @@
                 @slot('header')
                     <h4 class="card-title">{{ __('menu.category') }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('category.create') }}" class="btn btn-primary">{{ __('button.add') }}
+                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">{{ __('button.add') }}
                             {{ __('menu.category') }}</a>
                     </div>
                 @endslot
