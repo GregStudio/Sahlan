@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             @component('components.backend.card.card-form')
-                @slot('action', Route('category.update', $data['category']->id))
+                @slot('action', Route('admin.category.update', $data['category']->id))
                 @slot('content')
 
                     <x-forms.input name="name" id="name" :label="__('field.category_name')" :isRequired="true"
