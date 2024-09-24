@@ -35,7 +35,7 @@
                                             class="far fa-eye"></i>
                                         {{ __('button.detail') }}</a>
                                     <a class="dropdown-item has-icon btn-delete"
-                                        href="{{ route('category.delete', $category->id) }}"><i class="fa fa-trash"></i>
+                                        href="{{ route('admin.category.delete', $category->id) }}"><i class="fa fa-trash"></i>
                                         {{ __('button.delete') }}</a>
                                 </x-button.dropdown-button>
                             </td>
