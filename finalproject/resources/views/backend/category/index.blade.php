@@ -28,7 +28,7 @@
                             <td>{{ $category->Products()->count() }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('category.edit', $category->id) }}"><i
+                                    <a class="dropdown-item has-icon" href="{{ route('admin.category.edit', $category->id) }}"><i
                                             class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
                                     <a class="dropdown-item has-icon" href="{{ route('category.show', $category->id) }}"><i

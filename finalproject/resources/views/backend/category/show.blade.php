@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <h4 class="card-title">{{ $data['category']->name }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('category.edit', $data['category']->id) }}"
+                        <a href="{{ route('admin.category.edit', $data['category']->id) }}"
                             class="btn btn-success">{{ __('button.edit') }}</a>
                         <a href="{{ route('admin.category.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
                     </div>
