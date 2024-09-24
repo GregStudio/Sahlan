@@ -29,7 +29,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->category->store($request->all(),true,['thumbnails'],'category');
-        return redirect()->route('category.index')->with('success',__('message.store'));
+        return redirect()->route('admin.category.index')->with('success',__('message.store'));
     }
 
     public function delete($id)
@@ -51,7 +51,7 @@ class CategoryController extends Controller
         }else{
             $this->category->update($id,$request->all());
         }
-        return redirect()->route('category.index')->with('success',__('message.update'));
+        return redirect()->route('admin.category.index')->with('success',__('message.update'));
     }
 
     public function show($id)
