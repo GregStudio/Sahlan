@@ -15,7 +15,7 @@
                     <p>Kosongkan jika tidak akan mengubah gambar.</p>
 
                     <div class="text-right">
-                        <a href="{{ Route('category.index') }}" class="btn btn-danger"
+                        <a href="{{ Route('admin.category.index') }}" class="btn btn-danger"
                             href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>
