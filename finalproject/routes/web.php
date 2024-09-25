@@ -45,7 +45,7 @@ Route::prefix('app')->group(function () {
             Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
         });
 
-        Route::prefix('product')->name('product.')->group(function(){
+        Route::prefix('product')->name('admin.product.')->group(function(){
             Route::get('/',[ProductController::class,'index'])->name('index');
             Route::get('/create',[ProductController::class,'create'])->name('create');
             Route::post('/create',[ProductController::class,'store'])->name('store');
