@@ -47,7 +47,7 @@
                         hintText="Kosongkan jika tidak akan mengubah file" />
 
                     <div class="text-right">
-                        <a href="{{ Route('product.index') }}" class="btn btn-danger"
+                        <a href="{{ Route('admin.product.index') }}" class="btn btn-danger"
                             href="#">{{ __('button.cancel') }}</a>
                         <button type="submit" class="btn btn-primary" href="#">{{ __('button.save') }}</button>
                     </div>

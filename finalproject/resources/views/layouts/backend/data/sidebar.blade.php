@@ -17,7 +17,7 @@
                             <span>User</span></a></li>
                     <li><a class="nav-link" href="{{ route('admin.category.index') }}"><i class="fas fa-list"></i>
                             <span>Kategori</span></a></li>
-                    <li><a class="nav-link" href="{{ route('product.index') }}"><i class="fas fa-layer-group"></i>
+                    <li><a class="nav-link" href="{{ route('admin.product.index') }}"><i class="fas fa-layer-group"></i>
                             <span>Produk</span></a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i
@@ -52,7 +52,7 @@
 
                 @if ($id->role_id == 3)
                     <li class="menu-header">Menu Cashier</li>
-                    <li><a class="nav-link" href="{{ route('product.index') }}"><i class="fas fa-layer-group"></i>
+                    <li><a class="nav-link" href="{{ route('admin.product.index') }}"><i class="fas fa-layer-group"></i>
                         <span>Produk</span></a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link has-dropdown"><i

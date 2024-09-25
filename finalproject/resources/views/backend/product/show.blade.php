@@ -8,7 +8,7 @@
                     <div class="card-header-action">
                         <a href="{{ route('product.edit', $data['product']->id) }}"
                             class="btn btn-success">{{ __('button.edit') }}</a>
-                        <a href="{{ route('product.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
+                        <a href="{{ route('admin.product.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
                     </div>
                 </div>
                 <div class="card-body">

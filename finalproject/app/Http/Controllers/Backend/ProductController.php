@@ -40,7 +40,7 @@ class ProductController extends Controller
             }
         }
         $this->product->store($data,true,$thisThumbnails,'product/thumbnails');
-        return redirect()->route('product.index')->with('success',__('message.store'));
+        return redirect()->route('admin.product.index')->with('success',__('message.store'));
     }
 
     public function show($id)
@@ -63,7 +63,7 @@ class ProductController extends Controller
         }else{
             $this->product->update($id,$request->except('_token'));
         }
-        return redirect()->route('product.index')->with('success',__('message.store'));
+        return redirect()->route('admin.product.index')->with('success',__('message.store'));
     }
 
     public function delete($id)

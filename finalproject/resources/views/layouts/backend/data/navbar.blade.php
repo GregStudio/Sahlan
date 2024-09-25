@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
                 <div class="dropdown-footer text-center">
-                    <a href="{{ route('product.index') }}">Ke halaman produk <i
+                    <a href="{{ route('admin.product.index') }}">Ke halaman produk <i
                             class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
