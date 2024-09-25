@@ -95,7 +95,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><a
-                                                            href="{{ route('product.show', ['categoriSlug' => $detail->Product->category->slug, 'productSlug' => $detail->Product->slug]) }}">{{ $detail->product->name }}</a>
+                                                            href="{{ route('admin.product.show', ['categoriSlug' => $detail->Product->category->slug, 'productSlug' => $detail->Product->slug]) }}">{{ $detail->product->name }}</a>
                                                     </td>
                                                     <td class="text-center">{{ rupiah($detail->price) }}</td>
                                                     <td class="text-center">{{ $detail->qty }}</td>

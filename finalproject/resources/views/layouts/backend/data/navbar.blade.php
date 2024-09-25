@@ -19,7 +19,7 @@
                 @endphp
                 <div class="dropdown-list-content dropdown-list-icons">
                     @foreach ($products as $product)
-                        <a href="{{ route('product.show', ['id' => $product->id]) }}"
+                        <a href="{{ route('admin.product.show', ['id' => $product->id]) }}"
                             class="dropdown-item dropdown-item-unread">
                             <img class="dropdown-item-icon bg-primary text-white"
                                 src="{{ asset('storage/' . $product->thumbnails) }}">

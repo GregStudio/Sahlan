@@ -37,7 +37,7 @@
                                     <a class="dropdown-item has-icon" href="{{ route('product.edit', $product->id) }}"><i
                                             class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
-                                    <a class="dropdown-item has-icon" href="{{ route('product.show', $product->id) }}"><i
+                                    <a class="dropdown-item has-icon" href="{{ route('admin.product.show', $product->id) }}"><i
                                             class="far fa-eye"></i>
                                         {{ __('button.detail') }}</a>
                                     <a class="dropdown-item has-icon btn-delete"
