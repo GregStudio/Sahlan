@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <h4 class="card-title">{{ $data['product']->name }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('product.edit', $data['product']->id) }}"
+                        <a href="{{ route('admin.product.edit', $data['product']->id) }}"
                             class="btn btn-success">{{ __('button.edit') }}</a>
                         <a href="{{ route('admin.product.index') }}" class="btn btn-primary">{{ __('button.back') }}</a>
                     </div>

@@ -34,7 +34,7 @@
                             <td>{{ tanggal($product->created_at) }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="{{ route('product.edit', $product->id) }}"><i
+                                    <a class="dropdown-item has-icon" href="{{ route('admin.product.edit', $product->id) }}"><i
                                             class="far fa-edit"></i>
                                         {{ __('button.edit') }}</a>
                                     <a class="dropdown-item has-icon" href="{{ route('admin.product.show', $product->id) }}"><i
