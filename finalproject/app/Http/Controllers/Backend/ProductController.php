@@ -83,6 +83,6 @@ class ProductController extends Controller
     {
         $product = Product::onlyTrashed()->where('id', $id);
         $product->restore();
-        return redirect()->route('product.deleted')->with('success',__('message.store'));
+        return redirect()->route('admin.product.deleted')->with('success',__('message.store'));
     }
 }

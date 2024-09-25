@@ -6,7 +6,7 @@
                 @slot('header')
                     <h4 class="card-title">{{ __('menu.product') }}</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('product.deleted') }}" class="btn btn-warning">Lihat Produk di Nonaktifkan
+                        <a href="{{ route('admin.product.deleted') }}" class="btn btn-warning">Lihat Produk di Nonaktifkan
                         </a>
                         <a href="{{ route('admin.product.create') }}" class="btn btn-primary">{{ __('button.add') }}
                             {{ __('menu.product') }}</a>
@@ -41,7 +41,7 @@
                                             class="far fa-eye"></i>
                                         {{ __('button.detail') }}</a>
                                     <a class="dropdown-item has-icon btn-delete"
-                                        href="{{ route('product.delete', $product->id) }}"><i class="fa fa-trash"></i>
+                                        href="{{ route('admin.product.delete', $product->id) }}"><i class="fa fa-trash"></i>
                                         {{ __('button.delete') }}</a>
                                 </x-button.dropdown-button>
                             </td>
