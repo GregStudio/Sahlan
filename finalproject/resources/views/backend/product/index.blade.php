@@ -8,7 +8,7 @@
                     <div class="card-header-action">
                         <a href="{{ route('product.deleted') }}" class="btn btn-warning">Lihat Produk di Nonaktifkan
                         </a>
-                        <a href="{{ route('product.create') }}" class="btn btn-primary">{{ __('button.add') }}
+                        <a href="{{ route('admin.product.create') }}" class="btn btn-primary">{{ __('button.add') }}
                             {{ __('menu.product') }}</a>
                     </div>
                 @endslot
