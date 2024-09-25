@@ -4,7 +4,7 @@
         <div class="col-12">
             @component('components.backend.card.card-form')
                 @slot('isfile', true)
-                @slot('action', Route('product.store'))
+                @slot('action', Route('admin.product.store'))
                 @slot('method', 'POST')
                 @slot('content')
 
