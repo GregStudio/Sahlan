@@ -52,29 +52,31 @@
 
                 @if ($id->role_id == 3)
                     <li class="menu-header">Menu Cashier</li>
-                    <li><a class="nav-link" href="{{ route('admin.product.index') }}"><i class="fas fa-layer-group"></i>
-                        <span>Produk</span></a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link has-dropdown"><i
-                            class="fas fa-shopping-cart"></i><span>Pesanan</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{ route('feature.order.index') }}">Semua Pesanan</a></li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 0) }}">Menunggu Pembayaran</a>
-                        </li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 1) }}">Mengkonfirmasi
-                                Pembayaran</a></li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 2) }}">Pembayaran Selesai</a>
-                        </li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 3) }}">Pesanan Selesai</a>
-                        </li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 6) }}">Menunggu Pembayaran -
-                                Offline</a></li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 5) }}">Pesanan Selesai -
-                                Offline</a></li>
-                        <li><a class="nav-link" href="{{ route('feature.order.index', 4) }}">Pesanan Dibatalkan</a>
-                        </li>
-                    </ul>
-                </li>
+                    <li><a class="nav-link" href="{{ route('admin.product.index') }}"><i
+                                class="fas fa-layer-group"></i>
+                            <span>Produk</span></a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link has-dropdown"><i
+                                class="fas fa-shopping-cart"></i><span>Pesanan</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{{ route('feature.order.index') }}">Semua Pesanan</a></li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 0) }}">Menunggu
+                                    Pembayaran</a>
+                            </li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 1) }}">Mengkonfirmasi
+                                    Pembayaran</a></li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 2) }}">Pembayaran Selesai</a>
+                            </li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 3) }}">Pesanan Selesai</a>
+                            </li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 6) }}">Menunggu Pembayaran -
+                                    Offline</a></li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 5) }}">Pesanan Selesai -
+                                    Offline</a></li>
+                            <li><a class="nav-link" href="{{ route('feature.order.index', 4) }}">Pesanan Dibatalkan</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
             @endforeach
         </ul>
