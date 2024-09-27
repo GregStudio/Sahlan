@@ -11,11 +11,11 @@ class Product extends Model
     use SoftDeletes;
     use HasFactory;
     protected $guarded = [];
-    protected $appends = ['thumbnails_path','price_rupiah','total_sold','thumbnails_path2','thumbnails_path3','thumbnails_path4','thumbnails_path5'];
+    protected $appends = ['thumbnails_path', 'price_rupiah', 'total_sold', 'thumbnails_path2', 'thumbnails_path3', 'thumbnails_path4', 'thumbnails_path5'];
 
     public function Category()
     {
-        return $this->belongsTo(Category::class,'categories_id');
+        return $this->belongsTo(Category::class, 'categories_id');
     }
 
     public function OrderDetails()
@@ -50,13 +50,13 @@ class Product extends Model
 
     public function getPriceRupiahAttribute()
     {
-        return "Rp " . number_format($this->price,0,',','.');
+        return "Rp " . number_format($this->price, 0, ',', '.');
     }
 
     public function getTotalSoldAttribute()
     {
-        return $this->OrderDetails()->whereHas('Order',function($q){
-            $q->whereIn('status',[2,3]);
+        return $this->OrderDetails()->whereHas('Order', function ($q) {
+            $q->whereIn('status', [2, 3]);
         })->sum('qty');
     }
 }

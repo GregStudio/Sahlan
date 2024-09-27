@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','thumbnails','slug'];
+    protected $fillable = ['name', 'thumbnails', 'slug'];
     protected $appends = ['thumbnails_path'];
 
     public function Products()
     {
-        return $this->hasMany(Product::class,'categories_id','id');
+        return $this->hasMany(Product::class, 'categories_id', 'id');
     }
 
     public function getThumbnailsPathAttribute()
     {
-        return asset('storage/'. $this->thumbnails);
+        return asset('storage/' . $this->thumbnails);
     }
 
 }
