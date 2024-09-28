@@ -4,7 +4,8 @@ namespace App\Repositories;
 use Illuminate\Support\Facades\Auth;
 use File;
 
-class CrudRepositories {
+class CrudRepositories
+{
     protected $model;
 
     public function __construct($model)
@@ -19,7 +20,7 @@ class CrudRepositories {
 
     public function getPaginate($perPage)
     {
-        return $this->model->orderBy('created_at','DESC')->paginate($perPage);
+        return $this->model->orderBy('created_at', 'DESC')->paginate($perPage);
     }
 
     public function trashonly()
@@ -77,7 +78,7 @@ class CrudRepositories {
         }
         return $model->forceDelete();
     }
-    
+
 
     public function Query()
     {
