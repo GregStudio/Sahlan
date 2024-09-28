@@ -4,7 +4,8 @@ namespace App\Services\Feature;
 use App\Models\Order;
 use App\Repositories\CrudRepositories;
 
-class OrderService{
+class OrderService
+{
 
     protected $order;
     public function __construct(Order $order)
@@ -14,7 +15,7 @@ class OrderService{
 
     public function getUserOrder($user_id)
     {
-        return $this->order->Query()->where('user_id',$user_id)->orderBy('id','desc')->get();
+        return $this->order->Query()->where('user_id', $user_id)->orderBy('id', 'desc')->get();
     }
 
 }

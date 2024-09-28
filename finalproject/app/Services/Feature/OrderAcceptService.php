@@ -6,10 +6,11 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Repositories\CrudRepositories;
 
-class OrderAcceptService{
+class OrderAcceptService
+{
 
-    protected $order,$ordeDetail,$product;
-    public function __construct(Order $order,OrderDetail $orderDetail,Product $product)
+    protected $order, $ordeDetail, $product;
+    public function __construct(Order $order, OrderDetail $orderDetail, Product $product)
     {
         $this->order = new CrudRepositories($order);
         $this->orderDetail = new CrudRepositories($orderDetail);
@@ -18,8 +19,8 @@ class OrderAcceptService{
 
     public function process($request)
     {
-        $orders = $this->orderDetail->Query()->where('order_id','=',$request)->get();
-        foreach ($orders as $order){
+        $orders = $this->orderDetail->Query()->where('order_id', '=', $request)->get();
+        foreach ($orders as $order) {
             $cek = $this->product->Query()->where(['id' => $order->product_id])->first();
             $cek->stock = $cek->stock - $order->qty;
             $cek->update();

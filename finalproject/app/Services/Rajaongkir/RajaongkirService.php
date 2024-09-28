@@ -46,12 +46,12 @@ class RajaongkirService
             $err = curl_error($curl);
 
             curl_close($curl);
-            $data = json_decode($response,true);
+            $data = json_decode($response, true);
             return $data['rajaongkir']['results'];
         } catch (\Throwable $th) {
             dd($th->getMessage());
         }
-        
+
     }
 
     public function getProvince()
@@ -64,9 +64,9 @@ class RajaongkirService
         return $this->apiCall('/city?province=' . $province_id);
     }
 
-    public function cost($origin,$destination,$weight,$courier)
-    {  
-        $field = 'origin='.$origin.'&destination='.$destination.'&weight='.$weight.'&courier=' . $courier;
-        return $this->apiCall('/cost',$field,'POST');
+    public function cost($origin, $destination, $weight, $courier)
+    {
+        $field = 'origin=' . $origin . '&destination=' . $destination . '&weight=' . $weight . '&courier=' . $courier;
+        return $this->apiCall('/cost', $field, 'POST');
     }
 }
