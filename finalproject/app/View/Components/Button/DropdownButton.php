@@ -12,7 +12,7 @@ class DropdownButton extends Component
         $this->title = $title;
     }
 
-  
+
     public function render()
     {
         return view('components.button.dropdown-button');

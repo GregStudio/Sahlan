@@ -23,8 +23,7 @@ class Select extends Component
         $name = "",
         $isRequired = false,
         $hintText = null
-    )
-    {
+    ) {
         $this->label = $label;
         $this->id = $id;
         $this->name = $name;

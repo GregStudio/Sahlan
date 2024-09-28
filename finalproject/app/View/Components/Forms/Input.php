@@ -27,8 +27,7 @@ class Input extends Component
         $value = "",
         $isRequired = false,
         $hintText = null
-    )
-    {
+    ) {
         $this->label = $label;
         $this->id = $id;
         $this->type = $type;
@@ -38,7 +37,7 @@ class Input extends Component
         $this->hintText = $hintText;
     }
 
-  
+
     public function render()
     {
         return view('components.forms.input');
