@@ -19,8 +19,9 @@ class OrderChartPie
     {
         $order = Order::select(
             DB::raw("(count(id)) as total"),
-            DB::raw("status"))
-            ->whereYear('created_at',date('Y'))
+            DB::raw("status")
+        )
+            ->whereYear('created_at', date('Y'))
             ->groupBy('status')
             ->get();
         $status_name = json_decode(json_encode($order->pluck('status_name_text')), true);
