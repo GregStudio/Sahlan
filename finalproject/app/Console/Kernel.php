@@ -18,7 +18,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            $orders = Order::whereIn('status', [0,6])
+            $orders = Order::whereIn('status', [0, 6])
                 ->where('created_at', '<=', Carbon::now()->subHours(1))
                 ->get();
 
@@ -36,7 +36,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
