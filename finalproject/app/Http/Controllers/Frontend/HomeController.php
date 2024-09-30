@@ -17,6 +17,6 @@ class HomeController extends Controller
     public function index()
     {
         $data['new_categories'] = $this->category->Query()->limit(5)->get();
-        return view('frontend.home',compact('data'));
+        return view('frontend.home', compact('data'));
     }
 }

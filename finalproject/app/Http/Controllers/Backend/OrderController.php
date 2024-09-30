@@ -22,22 +22,22 @@ class OrderController extends Controller
 
     public function index($status = null)
     {
-        if($status == null){
+        if ($status == null) {
             $data['order'] = $this->order->get();
-        }else{
-            $data['order'] = $this->order->Query()->where('status',$status)->get();
+        } else {
+            $data['order'] = $this->order->Query()->where('status', $status)->get();
         }
-        return view('backend.feature.order.index',compact('data'));
+        return view('backend.feature.order.index', compact('data'));
     }
 
     public function show($id)
     {
         $order = Order::find($id);
         $data['order'] = $order;
-        if(isset($order->receipt_number)){
+        if (isset($order->receipt_number)) {
             $key = env('BINDERBYTE_KEY', 'some32charstring');
             $ch = curl_init();
-            $url = "https://api.binderbyte.com/v1/track?api_key=".$key."&courier=jne&awb=".$order->receipt_number;
+            $url = "https://api.binderbyte.com/v1/track?api_key=" . $key . "&courier=jne&awb=" . $order->receipt_number;
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $output = curl_exec($ch);
@@ -46,14 +46,14 @@ class OrderController extends Controller
         }
         $path = '/storage/file/order/payment/';
         $file_path = $data['order']->proof;
-        return view('backend.feature.order.show',compact(['data', 'path', 'file_path']));
+        return view('backend.feature.order.show', compact(['data', 'path', 'file_path']));
     }
 
     public function inputResi(Request $request)
     {
         $request->merge(['status' => 2]);
-        $this->order->Query()->where('invoice_number',$request->invoice_number)->first()->update($request->only('status','receipt_number'));
-        return back()->with('success',__('message.order_receipt'));
+        $this->order->Query()->where('invoice_number', $request->invoice_number)->first()->update($request->only('status', 'receipt_number'));
+        return back()->with('success', __('message.order_receipt'));
     }
 
     public function accept($id)
@@ -61,29 +61,29 @@ class OrderController extends Controller
         $request = request();
         $resi = $request->resi;
         $this->orderAcceptService->process($id);
-        $this->order->Query()->where('id',$id)->first()->update(['status' => 2, 'receipt_number' => $resi]);
-        $data['order'] = $this->order->Query()->where('id',$id)->first();
+        $this->order->Query()->where('id', $id)->first()->update(['status' => 2, 'receipt_number' => $resi]);
+        $data['order'] = $this->order->Query()->where('id', $id)->first();
         $user = User::where('id', '=', $data['order']->user_id)->first();
         Mail::to($user->email)->send(new Invoice($data));
-        return back()->with('success',__('message.order_received'));
+        return back()->with('success', __('message.order_received'));
     }
 
     public function refuse($id)
     {
-        $this->order->Query()->where('id',$id)->first()->update(['status' => 4]);
-        $data['order'] = $this->order->Query()->where('id',$id)->first();
+        $this->order->Query()->where('id', $id)->first()->update(['status' => 4]);
+        $data['order'] = $this->order->Query()->where('id', $id)->first();
         $user = User::where('id', '=', $data['order']->user_id)->first();
         Mail::to($user->email)->send(new Invoice($data));
-        return back()->with('success',__('message.order_received'));
+        return back()->with('success', __('message.order_received'));
     }
 
     public function payOffline($id)
     {
         $this->orderAcceptService->process($id);
-        $this->order->Query()->where('id',$id)->first()->update(['status' => 5]);
-        $data['order'] = $this->order->Query()->where('id',$id)->first();
+        $this->order->Query()->where('id', $id)->first()->update(['status' => 5]);
+        $data['order'] = $this->order->Query()->where('id', $id)->first();
         $user = User::where('id', '=', $data['order']->user_id)->first();
         Mail::to($user->email)->send(new Invoice($data));
-        return back()->with('success',__('message.order_received'));
+        return back()->with('success', __('message.order_received'));
     }
 }

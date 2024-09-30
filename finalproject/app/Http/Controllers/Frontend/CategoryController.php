@@ -9,8 +9,8 @@ use App\Repositories\CrudRepositories;
 
 class CategoryController extends Controller
 {
-    protected $category,$product;
-    public function __construct(Category $category,Product $product)
+    protected $category, $product;
+    public function __construct(Category $category, Product $product)
     {
         $this->category = new CrudRepositories($category);
         $this->product = new CrudRepositories($product);
@@ -19,14 +19,14 @@ class CategoryController extends Controller
     public function index()
     {
         $data['category'] = $this->category->getPaginate(9);
-        return view('frontend.category.index',compact('data'));
+        return view('frontend.category.index', compact('data'));
     }
 
     public function show($slug)
     {
-        $data['category'] = $this->category->Query()->where('slug',$slug)->first();
-        $data['product'] = $this->product->Query()->where('categories_id',$data['category']->id)->paginate(12);
+        $data['category'] = $this->category->Query()->where('slug', $slug)->first();
+        $data['product'] = $this->product->Query()->where('categories_id', $data['category']->id)->paginate(12);
 
-        return view('frontend.category.show',compact('data'));
+        return view('frontend.category.show', compact('data'));
     }
 }

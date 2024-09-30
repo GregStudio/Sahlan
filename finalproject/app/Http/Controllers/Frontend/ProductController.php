@@ -18,21 +18,21 @@ class ProductController extends Controller
     public function index()
     {
         $data['product'] = $this->product->getPaginate(12);
-        return view('frontend.product.index',compact('data'));
+        return view('frontend.product.index', compact('data'));
     }
 
-    public function show($categoriSlug,$productSlug)
+    public function show($categoriSlug, $productSlug)
     {
-        $data['product'] = $this->product->Query()->where('slug',$productSlug)->first();
-        $data['product_related'] = $this->product->Query()->whereNotIn('slug',[$productSlug])->limit(4)->get();
-        return view('frontend.product.show',compact('data'));
+        $data['product'] = $this->product->Query()->where('slug', $productSlug)->first();
+        $data['product_related'] = $this->product->Query()->whereNotIn('slug', [$productSlug])->limit(4)->get();
+        return view('frontend.product.show', compact('data'));
     }
 
     public function search(Request $request)
     {
-        $data['product'] = $this->product->Query()->where('name','like','%'.$request->q.'%')->paginate
+        $data['product'] = $this->product->Query()->where('name', 'like', '%' . $request->q . '%')->paginate
         (12);
 
-        return view('frontend.product.search',compact('data'));
+        return view('frontend.product.search', compact('data'));
     }
 }

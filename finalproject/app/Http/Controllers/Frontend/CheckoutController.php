@@ -12,8 +12,8 @@ use Illuminate\Http\Request;
 class CheckoutController extends Controller
 {
 
-    protected $rajaongkirService,$checkoutService,$cartService;
-    public function __construct(RajaongkirService $rajaongkirService,CheckoutService $checkoutService,CartService $cartService)
+    protected $rajaongkirService, $checkoutService, $cartService;
+    public function __construct(RajaongkirService $rajaongkirService, CheckoutService $checkoutService, CartService $cartService)
     {
         $this->cartService = $cartService;
         $this->rajaongkirService = $rajaongkirService;
@@ -25,7 +25,7 @@ class CheckoutController extends Controller
         $data['carts'] = $this->cartService->getUserCart();
         $data['provinces'] = $this->rajaongkirService->getProvince();
         $data['shipping_address'] = ShippingAddress::first();
-        return view('frontend.checkout.index',compact('data'));
+        return view('frontend.checkout.index', compact('data'));
     }
 
     public function cod()
@@ -33,24 +33,24 @@ class CheckoutController extends Controller
         $data['carts'] = $this->cartService->getUserCart();
         $data['provinces'] = $this->rajaongkirService->getProvince();
         $data['shipping_address'] = ShippingAddress::first();
-        return view('frontend.checkout.cod',compact('data'));
+        return view('frontend.checkout.cod', compact('data'));
     }
 
     public function process(Request $request)
     {
         $invoice_number = $this->checkoutService->process($request->all());
-        return redirect()->route('transaction.show', $invoice_number)->with('success',__('message.order_success'));
+        return redirect()->route('transaction.show', $invoice_number)->with('success', __('message.order_success'));
     }
 
     public function codProcess(Request $request)
     {
         $invoice_number = $this->checkoutService->codProcess($request->all());
-        return redirect()->route('transaction.show', $invoice_number)->with('success',__('message.order_success'));
+        return redirect()->route('transaction.show', $invoice_number)->with('success', __('message.order_success'));
     }
 
     public function offlineProcess(Request $request)
     {
         $invoice_number = $this->checkoutService->offlineProcess($request->all());
-        return redirect()->route('transaction.show', $invoice_number)->with('success',__('message.order_success'));
+        return redirect()->route('transaction.show', $invoice_number)->with('success', __('message.order_success'));
     }
 }

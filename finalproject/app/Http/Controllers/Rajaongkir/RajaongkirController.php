@@ -23,6 +23,6 @@ class RajaongkirController extends Controller
 
     public function cost(Request $request)
     {
-        return $this->rajaongkirService->cost($request->origin,$request->destination,$request->weight,$request->courier);
+        return $this->rajaongkirService->cost($request->origin, $request->destination, $request->weight, $request->courier);
     }
 }

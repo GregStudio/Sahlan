@@ -32,13 +32,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(auth()->user()->getRoleNames()->contains('admin')) {
+        if (auth()->user()->getRoleNames()->contains('admin')) {
             return redirect()->route('admin.dashboard');
-        }
-        elseif(auth()->user()->getRoleNames()->contains('cashier')) {
+        } elseif (auth()->user()->getRoleNames()->contains('cashier')) {
             return redirect()->route('feature.order.index');
-        }
-        else{
+        } else {
             return redirect()->route('home');
         }
     }

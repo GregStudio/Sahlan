@@ -14,7 +14,7 @@ class WebconfigController extends Controller
 {
     protected $webConfig;
     protected $rajaongkirService;
-    public function __construct(WebConfig $webConfig,RajaongkirService $rajaongkirService)
+    public function __construct(WebConfig $webConfig, RajaongkirService $rajaongkirService)
     {
         $this->webConfig = new CrudRepositories($webConfig);
         $this->rajaongkirService = $rajaongkirService;
@@ -25,13 +25,13 @@ class WebconfigController extends Controller
         $data['setting'] = ShippingAddress::first();
         $data['provinces'] = $this->rajaongkirService->getProvince();
         $data['city'] = $this->rajaongkirService->getCity($data['setting']['province_id']);
-        return view('backend.setting.address',compact('data'));
+        return view('backend.setting.address', compact('data'));
     }
 
     public function shippingUpdate(Request $request)
     {
-        ShippingAddress::first()->update($request->only('city_id','province_id'));
-        return back()->with('success',__('message.update'));
+        ShippingAddress::first()->update($request->only('city_id', 'province_id'));
+        return back()->with('success', __('message.update'));
     }
 
     public function web()
