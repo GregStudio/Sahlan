@@ -130,8 +130,8 @@
                     <tr>
                         <td align="left" bgcolor="#ffffff"
                             style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-                            <center><img src="{{ $message->embed(asset('ashion/img/logo-no-background.png')) }}"
-                                    width="50%"></center>
+                            {{-- <center><img src="{{ $message->embed(asset('ashion/img/logo-no-background.png')) }}"
+                                    width="50%"></center> --}}
                             <br>
                             <h1
                                 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">
