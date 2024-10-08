@@ -28,6 +28,6 @@ class CreateShippingAddressesTable extends Migration
      */
     public function down()
     {
-        
+        Schema::dropIfExists('shipping_addresses');
     }
 }
