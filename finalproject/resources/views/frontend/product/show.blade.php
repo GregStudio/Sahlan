@@ -26,12 +26,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__slider__content">
                             <div class="product__details__pic__slider owl-carousel">
-                                @if($data['product']->thumbnails_path != null)
-                                <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
-                                    <image data-hash="product-1" class="product__big__img"
-                                        src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
-                                </a>
-                                @else
+                                @if($data['product']->thumbnails_path5 != null)
                                 <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
@@ -56,6 +51,7 @@
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path5) }}" alt=""></image>
                                 </a>
+                                @else
                                 @endif
                             </div>
                         </div>
