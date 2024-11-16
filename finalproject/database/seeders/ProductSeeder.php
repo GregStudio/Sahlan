@@ -20,9 +20,9 @@ class ProductSeeder extends Seeder
             'name'          => 'Nasi',
             'slug'          => 'nasi',
             'thumbnails'    => 'file/product/thumbnails/wsIiszQURHBMW95M6ezMXS1FuR2718Yfh3mYZZHC.jpg',
-            'price'         => 1000,
-            'weight'        => 1000,
-            'stock'         => 100,
+            'price'         => '1000',
+            'weight'        => '1000',
+            'stock'         => '100',
             'description'   => 'nasi'
         ]);
     }
