@@ -26,7 +26,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__slider__content">
                             <div class="product__details__pic__slider owl-carousel">
-                                @if($data['product']->thumbnails_path5 != null)
+                                @if($data['product']->thumbnails5 != null)
                                 <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
@@ -52,7 +52,7 @@
                                         src="{{ asset($data['product']->thumbnails_path5) }}" alt=""></image>
                                 </a>
 
-                                @elseif($data['product']->thumbnails_path4 != null)
+                                @elseif($data['product']->thumbnails4 != null)
                                 <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
@@ -73,7 +73,7 @@
                                         src="{{ asset($data['product']->thumbnails_path4) }}" alt=""></image>
                                 </a>
 
-                                @elseif($data['product']->thumbnails_path3 != null)
+                                @elseif($data['product']->thumbnails3 != null)
                                 <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
@@ -89,7 +89,7 @@
                                         src="{{ asset($data['product']->thumbnails_path3) }}" alt=""></image>
                                 </a>
 
-                                @elseif($data['product']->thumbnails_path2 != null)
+                                @elseif($data['product']->thumbnails2 != null)
                                 <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
