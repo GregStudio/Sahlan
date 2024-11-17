@@ -99,7 +99,13 @@
                                     <image data-hash="product-1" class="product__big__img"
                                         src="{{ asset($data['product']->thumbnails_path2) }}" alt=""></image>
                                 </a>
+                                
                                 @else
+                                <a href="{{ $data['product']->thumbnails_path }}" class="image-popup">
+                                    <image data-hash="product-1" class="product__big__img"
+                                        src="{{ asset($data['product']->thumbnails_path) }}" alt=""></image>
+                                </a>
+
                                 @endif
                             </div>
                         </div>
