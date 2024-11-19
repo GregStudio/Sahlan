@@ -350,8 +350,8 @@
                                     <tr>
                                         <td align="left" valign="top"
                                             style="padding-bottom: 36px; padding-left: 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                                            <p><strong>Rekening Larisa Shop Bank Mandiri:</strong></p>
-                                            <p>9000045491736 A/N Sahlan Faldani</p>
+                                            <p><strong>Rekening Larisa Shop:</strong></p>
+                                            <p>9000045491736 A/N Sahlan Faldani (Bank Mandiri)</p>
                                         </td>
                                     </tr>
                                 </table>
