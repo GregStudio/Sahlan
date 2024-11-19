@@ -31,7 +31,7 @@
                                             <div class="invoice-title">
                                                 <h2>Upload Bukti Pembayaran</h2>
                                                 <div class="invoice-number">Total {{ rupiah($data['order']->total_pay) }}</div>
-                                                <p>7240120318 A/N Reynaldi Julianto (BCA)</p>
+                                                <p>9000045491736 A/N Sahlan Faldani (Bank Mandiri)</p>
                                             </div>
                                             <hr>
                                             <x-forms.input type="file" name="payment" id="payment" :label="__('field.payment')"
