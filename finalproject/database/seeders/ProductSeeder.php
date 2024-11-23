@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
             'categories_id' => 1,
             'name'          => 'Nasi',
             'slug'          => 'nasi',
-            'thumbnails'    => 'file/product/thumbnails/wsIiszQURHBMW95M6ezMXS1FuR2718Yfh3mYZZHC.jpg',
+            'thumbnails'    => 'file/product/thumbnails/feby.jpg',
             'price'         => '1000',
             'weight'        => '1000',
             'stock'         => '100',
