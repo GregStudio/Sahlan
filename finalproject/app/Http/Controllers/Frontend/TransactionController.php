@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
-class TransacationController extends Controller
+class TransactionController extends Controller
 {
     protected $orderService;
     protected $order;
