@@ -9,7 +9,7 @@ use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryControll
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\Frontend\TransacationController;
+use App\Http\Controllers\Frontend\TransactionController;
 use App\Http\Controllers\Rajaongkir\RajaongkirController;
 use App\Http\Controllers\Setting\WebconfigController;
 use Illuminate\Support\Facades\Route;
@@ -86,15 +86,15 @@ Route::middleware('verified','role:user')->group(function(){
     });
 
     Route::prefix('transaction')->name('transaction.')->group(function(){
-        Route::get('/',[TransacationController::class,'index'])->name('index');
-        Route::get('/{invoice_number}',[TransacationController::class,'show'])->name('show');
-        Route::get('/{invoice_number}/received',[TransacationController::class,'received'])->name('received');
-        Route::get('/{invoice_number}/canceled',[TransacationController::class,'canceled'])->name('canceled');
-        Route::get('/{invoice_number}/payment',[TransacationController::class,'payment'])->name('payment');
-        Route::post('/{invoice_number}/paymentChecking',[TransacationController::class,'paymentChecking'])->name('paymentChecking');
-        Route::get('/{invoice_number}/offline',[TransacationController::class,'offline'])->name('offline');
-        Route::get('/{invoice_number}/offlinePayment',[TransacationController::class,'offlinePayment'])->name('offlinePayment');
-        Route::get('/{invoice_number}/email',[TransacationController::class,'email'])->name('email');
+        Route::get('/',[TransactionController::class,'index'])->name('index');
+        Route::get('/{invoice_number}',[TransactionController::class,'show'])->name('show');
+        Route::get('/{invoice_number}/received',[TransactionController::class,'received'])->name('received');
+        Route::get('/{invoice_number}/canceled',[TransactionController::class,'canceled'])->name('canceled');
+        Route::get('/{invoice_number}/payment',[TransactionController::class,'payment'])->name('payment');
+        Route::post('/{invoice_number}/paymentChecking',[TransactionController::class,'paymentChecking'])->name('paymentChecking');
+        Route::get('/{invoice_number}/offline',[TransactionController::class,'offline'])->name('offline');
+        Route::get('/{invoice_number}/offlinePayment',[TransactionController::class,'offlinePayment'])->name('offlinePayment');
+        Route::get('/{invoice_number}/email',[TransactionController::class,'email'])->name('email');
     });
 
     Route::prefix('checkout')->name('checkout.')->group(function(){
