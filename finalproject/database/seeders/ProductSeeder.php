@@ -85,5 +85,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'minyak goreng bimoli 2 liter'
         ]);
+
+        Product::create([
+            'id'            => 7,
+            'categories_id' => 4,
+            'name'          => 'Bawang Merah',
+            'slug'          => 'bawang-merah',
+            'thumbnails'    => 'file/product/thumbnails/bawang-merah.jpeg',
+            'price'         => '25000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'bawang merah 1 kg'
+        ]);
     }
 }
