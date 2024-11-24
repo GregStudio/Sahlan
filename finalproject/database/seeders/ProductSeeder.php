@@ -17,13 +17,13 @@ class ProductSeeder extends Seeder
         Product::create([
             'id'            => 1,
             'categories_id' => 1,
-            'name'          => 'Nasi',
-            'slug'          => 'nasi',
-            'thumbnails'    => 'file/product/thumbnails/feby.jpg',
-            'price'         => '1000',
+            'name'          => 'Beras',
+            'slug'          => 'beras',
+            'thumbnails'    => 'file/product/thumbnails/beras.jpg',
+            'price'         => '15000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'nasi'
+            'description'   => 'beras 1 kg'
         ]);
     }
 }
