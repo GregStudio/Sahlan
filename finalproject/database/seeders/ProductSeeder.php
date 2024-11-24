@@ -49,5 +49,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'telur ayam 1 kg'
         ]);
+
+        Product::create([
+            'id'            => 4,
+            'categories_id' => 2,
+            'name'          => 'Telur Bebek',
+            'slug'          => 'telur-bebek',
+            'thumbnails'    => 'file/product/thumbnails/telur-bebek.jpg',
+            'price'         => '25000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'telur bebek 1 kg'
+        ]);
     }
 }
