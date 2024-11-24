@@ -61,5 +61,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'telur bebek 1 kg'
         ]);
+
+        Product::create([
+            'id'            => 5,
+            'categories_id' => 3,
+            'name'          => 'Minyak Goreng Bimoli 1 Liter',
+            'slug'          => 'minyak-goreng-bimoli-1-liter',
+            'thumbnails'    => 'file/product/thumbnails/minyak-goreng-bimoli-1-liter.jpg',
+            'price'         => '15000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'minyak goreng bimoli 1 liter'
+        ]);
     }
 }
