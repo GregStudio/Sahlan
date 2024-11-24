@@ -73,5 +73,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'minyak goreng bimoli 1 liter'
         ]);
+
+        Product::create([
+            'id'            => 6,
+            'categories_id' => 3,
+            'name'          => 'Minyak Goreng Bimoli 2 Liter',
+            'slug'          => 'minyak-goreng-bimoli-2-liter',
+            'thumbnails'    => 'file/product/thumbnails/minyak-goreng-bimoli-2-liter.jpg',
+            'price'         => '30000',
+            'weight'        => '2000',
+            'stock'         => '100',
+            'description'   => 'minyak goreng bimoli 2 liter'
+        ]);
     }
 }
