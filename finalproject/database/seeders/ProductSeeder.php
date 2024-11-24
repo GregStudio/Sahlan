@@ -37,5 +37,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'beras merah 1 kg'
         ]);
+
+        Product::create([
+            'id'            => 3,
+            'categories_id' => 2,
+            'name'          => 'Telur Ayam',
+            'slug'          => 'telur-ayam',
+            'thumbnails'    => 'file/product/thumbnails/telur-ayam.jpg',
+            'price'         => '25000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'telur ayam 1 kg'
+        ]);
     }
 }
