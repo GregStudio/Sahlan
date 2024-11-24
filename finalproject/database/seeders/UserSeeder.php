@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Spatie\Permission\Models\Role;
 class UserSeeder extends Seeder
 {
@@ -19,9 +20,10 @@ class UserSeeder extends Seeder
         Role::create(['name' => 'cashier']);
         
         $user = User::create([
-            'name'      => 'Admin',
-            'email'     => 'admin@gmail.com',
-            'password'  => bcrypt('password')
+            'name'              => 'Admin',
+            'email'             => 'admin@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password'          => bcrypt('password')
         ]);
         $user->assignRole('admin');
 
