@@ -97,5 +97,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'bawang merah 1 kg'
         ]);
+
+        Product::create([
+            'id'            => 8,
+            'categories_id' => 4,
+            'name'          => 'Bawang Putih',
+            'slug'          => 'bawang-putih',
+            'thumbnails'    => 'file/product/thumbnails/bawang-putih.jpeg',
+            'price'         => '25000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'bawang putih 1 kg'
+        ]);
     }
 }
