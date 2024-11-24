@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
-                        @foreach ($data['new_categories']->take(4) as $category)
+                        @foreach ($data['new_categories'] as $category)
                             <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                                 <div class="categories__item set-bg"
                                     data-setbg="{{ asset('storage/' . $category->thumbnails) }}">
