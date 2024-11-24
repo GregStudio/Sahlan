@@ -25,5 +25,17 @@ class ProductSeeder extends Seeder
             'stock'         => '100',
             'description'   => 'beras 1 kg'
         ]);
+
+        Product::create([
+            'id'            => 2,
+            'categories_id' => 1,
+            'name'          => 'Beras Merah',
+            'slug'          => 'beras-merah',
+            'thumbnails'    => 'file/product/thumbnails/beras-merah.png',
+            'price'         => '15000',
+            'weight'        => '1000',
+            'stock'         => '100',
+            'description'   => 'beras merah 1 kg'
+        ]);
     }
 }
