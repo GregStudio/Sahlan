@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             'price'         => '15000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'beras 1 kg'
+            'description'   => 'Beras 1 Kg'
         ]);
 
         Product::create([
@@ -35,7 +35,7 @@ class ProductSeeder extends Seeder
             'price'         => '15000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'beras merah 1 kg'
+            'description'   => 'Beras Merah 1 Kg'
         ]);
 
         Product::create([
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
             'price'         => '25000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'telur ayam 1 kg'
+            'description'   => 'Telur Ayam 1 Kg'
         ]);
 
         Product::create([
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
             'price'         => '25000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'telur bebek 1 kg'
+            'description'   => 'Telur Bebek 1 Kg'
         ]);
 
         Product::create([
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
             'price'         => '15000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'minyak goreng bimoli 1 liter'
+            'description'   => 'Minyak Goreng Bimoli 1 Liter'
         ]);
 
         Product::create([
@@ -83,7 +83,7 @@ class ProductSeeder extends Seeder
             'price'         => '30000',
             'weight'        => '2000',
             'stock'         => '100',
-            'description'   => 'minyak goreng bimoli 2 liter'
+            'description'   => 'Minyak Goreng Bimoli 2 Liter'
         ]);
 
         Product::create([
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
             'price'         => '25000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'bawang merah 1 kg'
+            'description'   => 'Bawang Merah 1 Kg'
         ]);
 
         Product::create([
@@ -107,7 +107,7 @@ class ProductSeeder extends Seeder
             'price'         => '25000',
             'weight'        => '1000',
             'stock'         => '100',
-            'description'   => 'bawang putih 1 kg'
+            'description'   => 'Bawang Putih 1 Kg'
         ]);
     }
 }
