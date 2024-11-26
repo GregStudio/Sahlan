@@ -47,7 +47,9 @@ class UserSeeder extends Seeder
             'name'              => 'Sahlan Faldani',
             'email'             => 'sahlanfaldani@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password'          => bcrypt('password')
+            'password'          => bcrypt('password'),
+            'phone_number'      => '085158233361',
+            'address'           => 'Banyu Urip Lor Tengah 21, Surabaya'
         ]);
         $user->assignRole('user');
     }
