@@ -62,14 +62,14 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn">
-                        <a href="{{ route('product.index') }}">Lanjutkan belanja</a>
+                        <a href="{{ route('product.index') }}">Lanjutkan Belanja</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn update__btn">
                         @if (empty($carts))
                         @else
-                            <button type="submit"><span class="icon_loading"></span> Perbarui keranjang</button>
+                            <button type="submit"><span class="icon_loading"></span> Perbarui Keranjang</button>
                         @endif
                         </form>
                     </div>
@@ -103,7 +103,7 @@
                                     method="POST">
                                     @csrf
 
-                                    <button type="submit" class="primary-btn2">Ambil di toko</button>
+                                    <button type="submit" class="primary-btn2">Ambil di Toko</button>
                                 </form>
                             </center>
                         </div>
