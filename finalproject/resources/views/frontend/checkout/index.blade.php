@@ -68,8 +68,6 @@
                                 <div class="checkout__form__input">
                                     <p>Kurir <span>*</span></p>
                                     <select name="courier" id="courier">
-                                        <option value="jne" selected>JNE</option>
-                                        <option value="tiki">TIKI</option>
                                         <option value="pos">POS INDONESIA</option>
                                     </select>
                                 </div>
