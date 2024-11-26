@@ -42,5 +42,13 @@ class UserSeeder extends Seeder
             'password'          => bcrypt('password')
         ]);
         $user->assignRole('cashier');
+
+        $user = User::create([
+            'name'              => 'Sahlan Faldani',
+            'email'             => 'sahlanfaldani@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password'          => bcrypt('password')
+        ]);
+        $user->assignRole('user');
     }
 }
