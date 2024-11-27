@@ -74,7 +74,7 @@
                                 <label for="">Masukkan Resi</label>
                                 <input type="text" class="form-control" name="resi" id=""
                                     aria-describedby="helpId" placeholder="Nomor Resi"
-                                    value="{{ $data['order']->receipt_number }}">
+                                    value="{{ $data['order']->receipt_number }}" required>
                                 </div>
                         @endif
                         <div class="row mt-4">
