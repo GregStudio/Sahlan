@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'password'          => bcrypt('password'),
             'phone_number'      => '085158233361',
-            'address'           => 'Banyu Urip Lor Tengah 21, Surabaya'
+            'address'           => 'Banyu Urip Lor Tengah 21'
         ]);
         $user->assignRole('user');
     }
