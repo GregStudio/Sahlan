@@ -154,9 +154,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                    @if ($data['order']->status == 1 || $data['order']->status == 2 || $data['order']->status == 3)
-                                        <img src=" {{ $path . $file_path }}" alt="" width="1000">
-                                    @endif
+                                    <img src=" {{ $path . $file_path }}" alt="" width="1000">
                                 </div>
                             </div>
                         </div>
