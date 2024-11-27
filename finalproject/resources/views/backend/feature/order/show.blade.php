@@ -13,8 +13,6 @@
                                             class="btn btn-success btn-icon icon-left"><i class="fa fa-arrow-left"></i>
                                             Kembali</a>
                                         @if ($data['order']->status == 1)
-                                            <!-- <a href="{{ route('feature.order.accept', $data['order']->id) }}" class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
-                                                            Terima</a> -->
                                             <button class="btn btn-primary btn-icon icon-left"><i class="fa fa-check"></i>
                                                 Terima</button>
                                             <a href="{{ route('feature.order.refuse', $data['order']->id) }}"
