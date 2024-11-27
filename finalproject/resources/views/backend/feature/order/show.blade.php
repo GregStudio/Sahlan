@@ -75,8 +75,7 @@
                                 <input type="text" class="form-control" name="resi" id=""
                                     aria-describedby="helpId" placeholder="Nomor Resi"
                                     value="{{ $data['order']->receipt_number }}">
-                                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
-                            </div>
+                                </div>
                         @endif
                         <div class="row mt-4">
                             <div class="col-md-12">
