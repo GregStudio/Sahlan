@@ -398,8 +398,7 @@
                     <tr>
                         <td align="center" bgcolor="#D2C7BA"
                             style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #666;">
-                            <p style="margin: 0;">Jl. Sambongan IV No.11, RT.002/RW.05, Bongkaran, Kec. Pabean
-                                Cantikan<br>Surabaya, Jawa Timur 60161</p>
+                            <p style="margin: 0;">Jl. Wolowaru - Lianunu, Kabupaten Ende</p>
                         </td>
                     </tr>
                     <!-- end unsubscribe -->
