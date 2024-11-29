@@ -133,18 +133,18 @@
                                     </div>
                                     <div class="product-details">
                                         <div class="product-name">{{ $best_product->name }}</div>
-                                        <div class="product-review">
+                                        {{-- <div class="product-review">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                        </div>
+                                        </div> --}}
                                         <div class="text-muted text-small">{{ $best_product->total_sold }}
                                             {{ __('text.sold') }}</div>
-                                        <div class="product-cta">
+                                        {{-- <div class="product-cta">
                                             <a href="#" class="btn btn-primary">Detail</a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
