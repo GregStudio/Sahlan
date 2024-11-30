@@ -23,7 +23,9 @@ class UserSeeder extends Seeder
             'name'              => 'Admin',
             'email'             => 'admin@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password'          => bcrypt('password')
+            'password'          => bcrypt('password'),
+            'phone_number'      => '085158233361',
+            'address'           => 'Banyu Urip Lor Tengah 21'
         ]);
         $user->assignRole('admin');
 
@@ -31,7 +33,9 @@ class UserSeeder extends Seeder
             'name'              => 'User',
             'email'             => 'user@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password'          => bcrypt('password')
+            'password'          => bcrypt('password'),
+            'phone_number'      => '085158233361',
+            'address'           => 'Banyu Urip Lor Tengah 21'
         ]);
         $user->assignRole('user');
 
@@ -39,7 +43,9 @@ class UserSeeder extends Seeder
             'name'              => 'Cashier',
             'email'             => 'cashier@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password'          => bcrypt('password')
+            'password'          => bcrypt('password'),
+            'phone_number'      => '085158233361',
+            'address'           => 'Banyu Urip Lor Tengah 21'
         ]);
         $user->assignRole('cashier');
 
