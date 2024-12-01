@@ -4,3 +4,6 @@
 - php artisan key:generate
 - php artisan migrate:fresh --seed
 - php artisan storage:link
+- php artisan serve
+
+lalu copy paste folder ke storage/app
