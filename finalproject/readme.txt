@@ -6,4 +6,4 @@
 - php artisan storage:link
 - php artisan serve
 
-lalu copy paste folder ke storage/app
+lalu copy paste folder Sahlan/file ke Sahlan/finalproject/storage/app/public
