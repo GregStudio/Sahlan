@@ -5,5 +5,4 @@
 - php artisan migrate:fresh --seed
 - php artisan storage:link
 - php artisan serve
-
 lalu copy paste folder "Sahlan/file" ke "Sahlan/finalproject/storage/app/public"
