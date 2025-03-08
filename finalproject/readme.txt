@@ -9,5 +9,3 @@
 lalu copy paste folder "Sahlan/file" ke "Sahlan/finalproject/storage/app/public"
 
 hehehe
-
-belajar commit
