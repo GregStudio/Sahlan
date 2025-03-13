@@ -11,3 +11,5 @@ lalu copy paste folder "Sahlan/file" ke "Sahlan/finalproject/storage/app/public"
 Indomaret jaya selamanya
 
 Indomaret jaya selamanya
+
+Indomaret jaya selamanya
