@@ -12,3 +12,4 @@ indomaret
 sahlan
 lucky
 ardianto
+manik
