@@ -14,3 +14,4 @@ lucky
 ardianto
 manik
 mickoko
+telkom
