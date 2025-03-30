@@ -10,8 +10,3 @@ lalu copy paste folder "Sahlan/file" ke "Sahlan/finalproject/storage/app/public"
 
 indomaret
 sahlan
-lucky
-ardianto
-manik
-mickoko
-telkom
