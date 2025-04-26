@@ -11,3 +11,4 @@ lalu copy paste folder "Sahlan/file" ke "Sahlan/finalproject/storage/app/public"
 Indomaret
 Telkom
 Apple Developer Academy
+Metrodata Academy
